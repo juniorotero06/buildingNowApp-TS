@@ -12,7 +12,7 @@ const BottomTabNavigator = () => {
         tabBarActiveTintColor: '#2F2FBC',
         tabBarInactiveTintColor: '#2F2FBC',
         tabBarItemStyle: {paddingVertical: 5},
-        tabBarIcon: ({focused, color, size}) => {
+        tabBarIcon: ({focused}) => {
           let iconName;
 
           if (route.name === 'Inicio') {

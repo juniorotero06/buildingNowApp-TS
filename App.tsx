@@ -34,7 +34,7 @@ const theme = {
   fonts: configureFonts(fontConfig),
 };
 
-export const App = () => {
+const App = () => {
   return (
     <PapperProvider theme={theme}>
       <NavigationContainer>
@@ -43,3 +43,5 @@ export const App = () => {
     </PapperProvider>
   );
 };
+
+export default App;
