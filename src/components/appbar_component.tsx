@@ -1,10 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {TouchableOpacity, View, Image, Text, StyleSheet} from 'react-native';
-import {Dimensions} from 'react-native';
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+import {TouchableOpacity, View, Image, Text} from 'react-native';
+import {styles} from '../styles/styles';
 
 const AppbarComponent = ({navigation, route, options, back}) => {
   const title =
@@ -29,26 +26,5 @@ const AppbarComponent = ({navigation, route, options, back}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  backIcon: {
-    width: 26,
-    height: 26,
-    marginLeft: windowWidth * 0.02,
-  },
-  appbarContentContainer: {
-    flexDirection: 'row',
-    paddingTop: windowHeight * 0.02,
-    paddingBottom: windowHeight * 0.05,
-    paddingHorizontal: windowWidth * 0.02,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  appbarTitle: {
-    color: 'black',
-    fontSize: windowWidth * 0.06,
-    fontWeight: 'bold',
-  },
-});
 
 export default AppbarComponent;

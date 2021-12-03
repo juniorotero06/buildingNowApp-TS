@@ -1,8 +1,9 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Image, StyleSheet} from 'react-native';
+import {Image} from 'react-native';
 import {MainStackNavigator} from './StackNavigator';
+import {styles} from '../styles/styles';
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
@@ -45,12 +46,5 @@ const BottomTabNavigator = () => {
     </Tab.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  libraryIcon: {
-    width: 26,
-    height: 26,
-  },
-});
 
 export default BottomTabNavigator;
