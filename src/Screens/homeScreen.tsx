@@ -7,7 +7,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
-import {Header, Button} from 'react-native-elements';
+import {Header} from 'react-native-elements';
 import {styles} from '../styles/styles';
 const logo = require('../assets/images/logo_letras_negras.png');
 const backgroundButton = require('../assets/icons/backgroundButtons.png');

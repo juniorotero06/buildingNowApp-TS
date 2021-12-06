@@ -3,7 +3,7 @@ import {Provider as PapperProvider} from 'react-native-paper';
 import {DefaultTheme, configureFonts} from 'react-native-paper';
 import {NavigationContainer} from '@react-navigation/native';
 import {MainStackNavigator} from './src/Navigation/StackNavigator';
-import HomeScreen from './src/Screens/homeScreen';
+import ContactScreen from './src/Screens/contactScreen';
 
 const fontConfig: any = {
   default: {
@@ -41,7 +41,7 @@ const App = () => {
       {/* <NavigationContainer>
         <MainStackNavigator />
       </NavigationContainer> */}
-      <HomeScreen />
+      <ContactScreen />
     </PapperProvider>
   );
 };

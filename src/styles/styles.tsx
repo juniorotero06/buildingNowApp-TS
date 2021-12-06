@@ -118,6 +118,43 @@ const styles = StyleSheet.create({
     width: '75%',
     marginTop: windowHeight * 0.005,
   },
+  // Linear Gradiant Style
+  cardButtonGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '80%',
+    marginBottom: windowHeight * 0.13,
+    marginTop: windowHeight * -0.07,
+  },
+  //Input styles
+  containerForm: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginTop: windowHeight * 0.14,
+  },
+  input: {
+    width: '80%',
+    height: windowHeight * 0.07,
+    margin: 6,
+    borderWidth: 1,
+    padding: 10,
+    backgroundColor: 'white',
+    borderColor: '#2F2FBC',
+    borderRadius: 5,
+    color: 'black',
+  },
+  textContact: {
+    fontSize: 12,
+    color: '#2F2FBC',
+    marginBottom: windowHeight * 0.03,
+    textAlign: 'center',
+    width: '70%',
+  },
 });
 
 export {styles, windowHeight, windowWidth};
