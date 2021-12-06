@@ -11,12 +11,12 @@ const ApoyoScreen = () => {
     <ImageBackground
       source={bacground}
       resizeMode="cover"
-      style={{...styles.image, backgroundColor: 'white'}}>
+      style={{...styles.image, backgroundColor: 'white', height: '100%'}}>
       <View
         style={{
           ...styles.containerWelcome,
           justifyContent: 'flex-start',
-          marginTop: windowHeight * 0.2,
+          marginTop: windowHeight * 0.1,
         }}>
         <Image
           source={logoGobernacion}

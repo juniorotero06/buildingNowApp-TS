@@ -2,47 +2,81 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Image} from 'react-native';
-import {MainStackNavigator} from './StackNavigator';
+import {
+  MainStackNavigator,
+  ContactStackNavigator,
+  TestIttackNavigator,
+  UneteStackNavigator,
+} from './StackNavigator';
 import {styles} from '../styles/styles';
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
+  let iconName;
   return (
     <Tab.Navigator
-      screenOptions={({route}) => ({
-        tabBarActiveTintColor: '#2F2FBC',
-        tabBarInactiveTintColor: '#2F2FBC',
+      initialRouteName="Inicio"
+      screenOptions={() => ({
+        tabBarActiveTintColor: '#F2A01F',
+        tabBarInactiveTintColor: 'white',
         tabBarItemStyle: {paddingVertical: 5},
-        tabBarIcon: ({focused}) => {
-          let iconName;
-
-          if (route.name === 'Inicio') {
+        tabBarStyle: {
+          backgroundColor: '#2F2FBC',
+          position: 'absolute',
+          height: '8.5%',
+          paddingBottom: 10,
+          paddingTop: 10,
+        },
+      })}>
+      <Tab.Screen
+        name="Inicio"
+        component={MainStackNavigator}
+        options={{
+          tabBarIcon: ({focused}) => {
             iconName = focused
               ? require('../assets/icons/iconButtonNavBar/Inicio/inicio_activo.png')
-              : require('../assets/icons/iconButtonNavBar/Inicio/inicio_activo.png');
+              : require('../assets/icons/iconButtonNavBar/Inicio/inicio.png');
             return <Image source={iconName} style={styles.libraryIcon} />;
-          } else if (route.name === 'Pruebalo Ya') {
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Pruebalo Ya"
+        component={TestIttackNavigator}
+        options={{
+          tabBarIcon: ({focused}) => {
             iconName = focused
-              ? require('../assets/icons/iconButtonNavBar/Pruebalo Ya/pruebalo_activo.png')
-              : require('../assets/icons/iconButtonNavBar/Pruebalo Ya/pruebalo.png');
+              ? require('../assets/icons/iconButtonNavBar/PruebaloYa/pruebalo_activo.png')
+              : require('../assets/icons/iconButtonNavBar/PruebaloYa/pruebalo.png');
             return <Image source={iconName} style={styles.libraryIcon} />;
-          } else if (route.name === 'Únete') {
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Únete"
+        component={UneteStackNavigator}
+        options={{
+          tabBarLabel: 'Únete',
+          tabBarIcon: ({focused}) => {
             iconName = focused
               ? require('../assets/icons/iconButtonNavBar/Unete/unete_activo.png')
               : require('../assets/icons/iconButtonNavBar/Unete/unete.png');
             return <Image source={iconName} style={styles.libraryIcon} />;
-          } else if (route.name === 'Contacto') {
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Contacto"
+        component={ContactStackNavigator}
+        options={{
+          tabBarIcon: ({focused}) => {
             iconName = focused
               ? require('../assets/icons/iconButtonNavBar/Contacto/contacto_activo.png')
-              : require('../assets/icons/iconButtonNavBar/Contacto/contacto_activo.png');
+              : require('../assets/icons/iconButtonNavBar/Contacto/contacto.png');
             return <Image source={iconName} style={styles.libraryIcon} />;
-          }
-        },
-      })}>
-      <Tab.Screen name="Inicio" component={MainStackNavigator} />
-      <Tab.Screen name="Pruebalo Ya" component={MainStackNavigator} />
-      <Tab.Screen name="Únete" component={MainStackNavigator} />
-      <Tab.Screen name="Contacto" component={MainStackNavigator} />
+          },
+        }}
+      />
     </Tab.Navigator>
   );
 };

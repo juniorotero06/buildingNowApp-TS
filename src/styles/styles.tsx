@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    height: '20%',
+    height: '10%',
     backgroundColor: '#fff',
   },
   headerText: {
@@ -26,23 +26,28 @@ const styles = StyleSheet.create({
     resizeMode: 'center',
   },
   backgroundButton: {
+    flex: 1,
     width: '100%',
     height: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
   },
   button: {
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    flexDirection: 'row',
-    backgroundColor: '#F2A01F',
-    padding: 10,
-    borderRadius: 20,
-    width: '85%',
-    marginTop: 20,
-    elevation: 10,
-    shadowColor: '#000',
+    // justifyContent: 'space-around',
+    // alignItems: 'center',
+    // flexDirection: 'row',
+    // backgroundColor: '#F2A01F',
+    // padding: 10,
+    // borderRadius: 20,
+    // width: '85%',
+    // marginTop: 20,
+    // elevation: 10,
+    // shadowColor: '#000',
+    width: 350,
+    height: 180,
+
+    marginBottom: windowHeight * -0.05,
   },
   textButton: {
     flexDirection: 'row',
@@ -63,6 +68,8 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
+    height: '180%',
+    width: '100%',
   },
   logoWelcome: {
     resizeMode: 'center',
@@ -71,25 +78,25 @@ const styles = StyleSheet.create({
   backIcon: {
     width: 26,
     height: 26,
-    marginLeft: windowWidth * 0.02,
   },
   appbarContentContainer: {
     flexDirection: 'row',
     paddingTop: windowHeight * 0.02,
-    paddingBottom: windowHeight * 0.05,
+    paddingBottom: windowHeight * 0.009,
     paddingHorizontal: windowWidth * 0.02,
     alignItems: 'center',
     justifyContent: 'space-between',
+    backgroundColor: 'white',
   },
   appbarTitle: {
     color: 'black',
-    fontSize: windowWidth * 0.06,
-    fontWeight: 'bold',
+    fontSize: windowWidth * 0.07,
+    fontWeight: 'normal',
   },
   //tabNavigator
   libraryIcon: {
-    width: 26,
-    height: 26,
+    width: 30,
+    height: 30,
   },
   //howFunction Styles
   imgHf: {
@@ -133,13 +140,13 @@ const styles = StyleSheet.create({
   //Input styles
   containerForm: {
     flex: 1,
-    justifyContent: 'flex-start',
+    justifyContent: 'space-around',
     alignItems: 'center',
     marginTop: windowHeight * 0.14,
   },
   input: {
     width: '80%',
-    height: windowHeight * 0.07,
+    height: windowHeight * 0.04,
     margin: 6,
     borderWidth: 1,
     padding: 10,
@@ -154,6 +161,12 @@ const styles = StyleSheet.create({
     marginBottom: windowHeight * 0.03,
     textAlign: 'center',
     width: '70%',
+  },
+  buttonImg: {
+    width: 130,
+    height: 130,
+    borderRadius: 35,
+    marginTop: -20,
   },
 });
 

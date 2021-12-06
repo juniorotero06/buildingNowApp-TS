@@ -14,7 +14,7 @@ const UneteScreen = () => {
           ...styles.imgHf,
           width: '80%',
           height: '24%',
-          marginTop: windowHeight * 0.1,
+          marginTop: windowHeight * 0.02,
         }}
       />
       <Image
@@ -22,7 +22,7 @@ const UneteScreen = () => {
         style={{
           ...styles.imgHf,
           width: '110%',
-          height: '50%',
+          height: '55%',
           marginTop: windowHeight * 0.01,
           marginRight: windowWidth * 0.1,
         }}

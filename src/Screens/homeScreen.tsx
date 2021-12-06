@@ -10,37 +10,30 @@ import {
 import {Header} from 'react-native-elements';
 import {styles} from '../styles/styles';
 const logo = require('../assets/images/logo_letras_negras.png');
-const backgroundButton = require('../assets/icons/backgroundButtons.png');
-const aboutIcon = require('../assets/icons/about.png');
-const apoyoIcon = require('../assets/icons/apoyo.png');
-const howfIcon = require('../assets/icons/howf.png');
-const servicesIcon = require('../assets/icons/services.png');
+const aboutIcon = require('../assets/images/btn_nosotros.png');
+const apoyoIcon = require('../assets/images/btn_apoyo.png');
+const howfIcon = require('../assets/images/btn_howf.png');
+const servicesIcon = require('../assets/images/btn_servicios.png');
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <View style={{...styles.container, justifyContent: 'flex-start'}}>
       <Header
         containerStyle={styles.header}
         centerComponent={<Image style={styles.logo} source={logo} />}
       />
 
-      <TouchableOpacity style={styles.button}>
-        <Image style={styles.icon} source={aboutIcon} />
-        <Text style={styles.textButton}>Nosotros</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('About')}>
+        <Image style={styles.button} source={aboutIcon} />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.textButton}>¡Servicios al Instante!</Text>
-        <Image style={styles.icon} source={servicesIcon} />
+      <TouchableOpacity onPress={() => navigation.navigate('About')}>
+        <Image style={styles.button} source={servicesIcon} />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-        <Image style={styles.icon} source={howfIcon} />
-        <Text style={{...styles.textButton, textAlign: 'right'}}>
-          ¿Cómo Funciona?
-        </Text>
+      <TouchableOpacity onPress={() => navigation.navigate('howf')}>
+        <Image style={styles.button} source={howfIcon} />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.textButton}>Apoyo Institucional</Text>
-        <Image style={styles.icon} source={apoyoIcon} />
+      <TouchableOpacity onPress={() => navigation.navigate('apoyo')}>
+        <Image style={styles.button} source={apoyoIcon} />
       </TouchableOpacity>
     </View>
   );

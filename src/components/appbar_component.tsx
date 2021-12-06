@@ -9,20 +9,20 @@ const AppbarComponent = ({navigation, route, options, back}) => {
       ? options.headerTitle
       : options.title !== undefined
       ? options.title
-      : route.name;
+      : null;
   return (
     <View style={styles.appbarContentContainer}>
-      {back ? (
-        <TouchableOpacity onPress={navigation.goBack}>
-          <Image
-            source={require('../assets/icons/back.png')}
-            style={styles.backIcon}
-          />
-        </TouchableOpacity>
-      ) : (
-        <View />
-      )}
-      <Text style={styles.appbarTitle}>{title}</Text>
+      <TouchableOpacity onPress={navigation.goBack}>
+        <Image
+          source={require('../assets/icons/back.png')}
+          style={styles.backIcon}
+        />
+      </TouchableOpacity>
+      <View style={{alignItems: 'center'}}>
+        <Text style={styles.appbarTitle}>{title}</Text>
+        <View style={{width: 50, height: 3, backgroundColor: '#F2A01F'}}></View>
+      </View>
+      <View />
     </View>
   );
 };

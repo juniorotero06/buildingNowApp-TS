@@ -14,16 +14,16 @@ const TestItScreen = () => {
           ...styles.imgHf,
           width: '80%',
           height: '30%',
-          marginTop: windowHeight * 0.1,
+          marginTop: windowHeight * 0.02,
         }}
       />
       <Image
         source={imgTestIt}
         style={{
           ...styles.imgHf,
-          width: '80%',
+          width: '75%',
           height: '45%',
-          marginTop: windowHeight * 0.01,
+          marginTop: windowHeight * 0.03,
         }}
       />
       <LinearGradient

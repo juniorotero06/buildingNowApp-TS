@@ -2,8 +2,7 @@ import React from 'react';
 import {Provider as PapperProvider} from 'react-native-paper';
 import {DefaultTheme, configureFonts} from 'react-native-paper';
 import {NavigationContainer} from '@react-navigation/native';
-import {MainStackNavigator} from './src/Navigation/StackNavigator';
-import ContactScreen from './src/Screens/contactScreen';
+import BottomTabNavigator from './src/Navigation/tabNavegator';
 
 const fontConfig: any = {
   default: {
@@ -38,10 +37,9 @@ const theme = {
 const App = () => {
   return (
     <PapperProvider theme={theme}>
-      {/* <NavigationContainer>
-        <MainStackNavigator />
-      </NavigationContainer> */}
-      <ContactScreen />
+      <NavigationContainer>
+        <BottomTabNavigator />
+      </NavigationContainer>
     </PapperProvider>
   );
 };
