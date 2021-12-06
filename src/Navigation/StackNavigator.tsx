@@ -1,7 +1,6 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {CardStyleInterpolators} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
+import { CardStyleInterpolators } from '@react-navigation/stack';
 import AppbarComponent from '../components/appbar_component';
 import HomeScreen from '../Screens/homeScreen';
 //import WelcomeScreen from '../Screens/welcomeScreen';
@@ -13,7 +12,8 @@ function MainStackNavigator() {
     <Stack.Navigator
       screenOptions={{
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-      }}>
+      }}
+    >
       <Stack.Screen name="Inicio" component={HomeScreen} />
     </Stack.Navigator>
   );
@@ -23,23 +23,15 @@ const AboutStackNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        header: ({navigation, route, options, back}) => (
-          <AppbarComponent
-            route={route}
-            options={options}
-            back={back}
-            navigation={navigation}
-          />
+        header: ({ navigation, route, options, back }) => (
+          <AppbarComponent route={route} options={options} back={back} navigation={navigation} />
         ),
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-      }}>
-      <Stack.Screen
-        name="About"
-        component={HomeScreen}
-        options={{headerTitle: 'Nosotros'}}
-      />
+      }}
+    >
+      <Stack.Screen name="About" component={HomeScreen} options={{ headerTitle: 'Nosotros' }} />
     </Stack.Navigator>
   );
 };
 
-export {MainStackNavigator, AboutStackNavigator};
+export { MainStackNavigator, AboutStackNavigator };

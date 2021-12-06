@@ -1,14 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ImageBackground,
-  TouchableOpacity,
-} from 'react-native';
-import {Header, Button} from 'react-native-elements';
+import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity } from 'react-native';
+import { Header, Button } from 'react-native-elements';
 const logo = require('../assets/images/logo_letras_negras.png');
 const backgroundButton = require('../assets/icons/backgroundButtons.png');
 const aboutIcon = require('../assets/icons/about.png');
@@ -19,10 +12,7 @@ const servicesIcon = require('../assets/icons/services.png');
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Header
-        containerStyle={styles.header}
-        centerComponent={<Image style={styles.logo} source={logo} />}
-      />
+      <Header containerStyle={styles.header} centerComponent={<Image style={styles.logo} source={logo} />} />
 
       <TouchableOpacity style={styles.button}>
         <Image style={styles.icon} source={aboutIcon} />
