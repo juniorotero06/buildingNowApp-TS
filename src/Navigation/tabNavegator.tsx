@@ -23,8 +23,8 @@ const BottomTabNavigator = () => {
         tabBarStyle: {
           backgroundColor: '#2F2FBC',
           position: 'absolute',
-          height: '8.5%',
-          paddingBottom: 10,
+          height: '9%',
+          paddingBottom: 0,
           paddingTop: 10,
         },
       })}>
