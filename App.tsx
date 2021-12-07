@@ -1,7 +1,7 @@
 import React from 'react';
-import {Provider as PapperProvider} from 'react-native-paper';
-import {DefaultTheme, configureFonts} from 'react-native-paper';
-import {NavigationContainer} from '@react-navigation/native';
+import { Provider as PapperProvider } from 'react-native-paper';
+import { DefaultTheme, configureFonts } from 'react-native-paper';
+import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigator from './src/Navigation/tabNavegator';
 
 const fontConfig: any = {
