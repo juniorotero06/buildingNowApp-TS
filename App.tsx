@@ -1,8 +1,8 @@
 import React from 'react';
-import {Provider as PapperProvider} from 'react-native-paper';
-import {DefaultTheme, configureFonts} from 'react-native-paper';
-import {NavigationContainer} from '@react-navigation/native';
-import {MainStackNavigator} from './src/Navigation/StackNavigator';
+import { Provider as PapperProvider } from 'react-native-paper';
+import { DefaultTheme, configureFonts } from 'react-native-paper';
+import { NavigationContainer } from '@react-navigation/native';
+import BottomTabNavigator from './src/Navigation/tabNavegator';
 
 const fontConfig: any = {
   default: {
@@ -38,7 +38,7 @@ const App = () => {
   return (
     <PapperProvider theme={theme}>
       <NavigationContainer>
-        <MainStackNavigator />
+        <BottomTabNavigator />
       </NavigationContainer>
     </PapperProvider>
   );

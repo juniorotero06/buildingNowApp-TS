@@ -1,95 +1,35 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ImageBackground,
-  TouchableOpacity,
-} from 'react-native';
-import {Header, Button} from 'react-native-elements';
+import { View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { Header } from 'react-native-elements';
+import { styles } from '../styles/styles';
 const logo = require('../assets/images/logo_letras_negras.png');
-const backgroundButton = require('../assets/icons/backgroundButtons.png');
-const aboutIcon = require('../assets/icons/about.png');
-const apoyoIcon = require('../assets/icons/apoyo.png');
-const howfIcon = require('../assets/icons/howf.png');
-const servicesIcon = require('../assets/icons/services.png');
+const aboutIcon = require('../assets/images/btn_nosotros.png');
+const apoyoIcon = require('../assets/images/btn_apoyo.png');
+const howfIcon = require('../assets/images/btn_howf.png');
+const servicesIcon = require('../assets/images/btn_servicios.png');
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Header
-        containerStyle={styles.header}
-        centerComponent={<Image style={styles.logo} source={logo} />}
-      />
+    <ScrollView>
+      <View style={{ ...styles.container, justifyContent: 'flex-start' }}>
+        <Header containerStyle={styles.header} centerComponent={<Image style={styles.logo} source={logo} />} />
 
-      <TouchableOpacity style={styles.button}>
-        <Image style={styles.icon} source={aboutIcon} />
-        <Text style={styles.textButton}>Nosotros</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.textButton}>¡Servicios al Instante!</Text>
-        <Image style={styles.icon} source={servicesIcon} />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-        <Image style={styles.icon} source={howfIcon} />
-        <Text style={styles.textButton}>¿Cómo Funciona?</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.textButton}>Apoyo Institucional</Text>
-        <Image style={styles.icon} source={apoyoIcon} />
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity onPress={() => navigation.navigate('About')}>
+          <Image style={styles.button} source={aboutIcon} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('services')}>
+          <Image style={styles.button} source={servicesIcon} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('howf')}>
+          <Image style={styles.button} source={howfIcon} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('apoyo')}>
+          <Image style={styles.button} source={apoyoIcon} />
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-  },
-  header: {
-    height: '20%',
-    backgroundColor: '#fff',
-  },
-  headerText: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    letterSpacing: 1,
-    color: '#333',
-  },
-  logo: {
-    width: '100%',
-    resizeMode: 'center',
-  },
-  backgroundButton: {
-    width: '100%',
-    height: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  button: {
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    flexDirection: 'row',
-    backgroundColor: '#F2A01F',
-    padding: 10,
-    borderRadius: 20,
-    width: '85%',
-    marginTop: 20,
-  },
-  textButton: {
-    flexDirection: 'row',
-    fontSize: 30,
-  },
-  icon: {
-    width: 70,
-    height: 70,
-    marginHorizontal: 10,
-  },
-});
 
 export default HomeScreen;
