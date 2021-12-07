@@ -3,6 +3,7 @@ import { Provider as PapperProvider } from 'react-native-paper';
 import { DefaultTheme, configureFonts } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigator from './src/Navigation/tabNavegator';
+import SplashScreen from 'react-native-splash-screen';
 
 const fontConfig: any = {
   default: {
@@ -35,6 +36,9 @@ const theme = {
 };
 
 const App = () => {
+  React.useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <PapperProvider theme={theme}>
       <NavigationContainer>

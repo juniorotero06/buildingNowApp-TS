@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {Dimensions} from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Dimensions } from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   },
   appbarContentContainer: {
     flexDirection: 'row',
-    paddingTop: windowHeight * 0.02,
+    paddingTop: windowHeight * 0.04,
     paddingBottom: windowHeight * 0.009,
     paddingHorizontal: windowWidth * 0.02,
     alignItems: 'center',
@@ -136,6 +136,10 @@ const styles = StyleSheet.create({
     width: '80%',
     marginBottom: windowHeight * 0.13,
     marginTop: windowHeight * -0.07,
+    // alignItems: 'center',
+    // borderRadius: 8,
+    // flexWrap: 'wrap',
+    // padding: 10,
   },
   //Input styles
   containerForm: {
@@ -168,6 +172,21 @@ const styles = StyleSheet.create({
     borderRadius: 35,
     marginTop: -20,
   },
+  ////////////////
+  fwSemiBold: {
+    fontFamily: 'Quicksand-SemiBold',
+  },
+  cardButton: {
+    width: '80%',
+    position: 'absolute',
+    bottom: -(windowHeight * 0.09),
+  },
+  cardButtonText: {
+    color: 'white',
+    fontSize: 18,
+    textAlign: 'center',
+    width: '100%',
+  },
 });
 
-export {styles, windowHeight, windowWidth};
+export { styles, windowHeight, windowWidth };
