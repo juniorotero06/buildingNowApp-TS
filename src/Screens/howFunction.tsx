@@ -14,12 +14,11 @@ const HowFunctionScreen = () => {
         <Text style={styles.textSubtitle}>Regístrate</Text>
       </View>
       <View style={styles.howFContainer}>
-        <Text style={{ ...styles.textPaso, marginRight: windowWidth * -0.1 }}>Paso 2:</Text>
+        <Text style={{ ...styles.textPaso, marginRight: -(windowWidth * 0.1) }}>Paso 2:</Text>
         <Text
           style={{
             ...styles.textSubtitle,
             color: '#2F2FBC',
-            fontSize: 35,
             marginRight: windowWidth * 0.25,
           }}
         >
@@ -46,8 +45,8 @@ const HowFunctionScreen = () => {
         >
           Paso 3:
         </Text>
-        <Text style={{ ...styles.textSubtitle, fontSize: 28 }}>Pide o confirma</Text>
-        <Text style={{ ...styles.textSubtitle, fontSize: 28 }}>tus servicios al instante</Text>
+        <Text style={{ ...styles.textSubtitle, fontSize: windowWidth * 0.07 }}>Pide o confirma</Text>
+        <Text style={{ ...styles.textSubtitle, fontSize: windowWidth * 0.07 }}>tus servicios al instante</Text>
       </View>
     </View>
   );

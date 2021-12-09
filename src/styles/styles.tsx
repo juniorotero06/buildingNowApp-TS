@@ -34,20 +34,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   button: {
-    // justifyContent: 'space-around',
-    // alignItems: 'center',
-    // flexDirection: 'row',
-    // backgroundColor: '#F2A01F',
-    // padding: 10,
-    // borderRadius: 20,
-    // width: '85%',
-    // marginTop: 20,
-    // elevation: 10,
-    // shadowColor: '#000',
-    width: 350,
-    height: 180,
-
-    marginBottom: windowHeight * -0.05,
+    width: windowWidth * 0.9,
+    height: windowHeight * 0.22,
+    marginBottom: -(windowHeight * 0.035),
   },
   textButton: {
     flexDirection: 'row',
@@ -72,6 +61,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   logoWelcome: {
+    width: '60%',
     resizeMode: 'center',
   },
   //AppBar Styles
@@ -81,7 +71,7 @@ const styles = StyleSheet.create({
   },
   appbarContentContainer: {
     flexDirection: 'row',
-    paddingTop: windowHeight * 0.04,
+    paddingTop: windowHeight * 0.06,
     paddingBottom: windowHeight * 0.009,
     paddingHorizontal: windowWidth * 0.02,
     alignItems: 'center',
@@ -95,25 +85,31 @@ const styles = StyleSheet.create({
   },
   //tabNavigator
   libraryIcon: {
-    width: 30,
-    height: 30,
+    width: windowWidth * 0.09,
+    height: windowHeight * 0.05,
+    resizeMode: 'center',
+  },
+  tabBarLabelStyle: {
+    fontSize: windowWidth * 0.03,
+    paddingTop: windowHeight * 0.01,
   },
   //howFunction Styles
   imgHf: {
-    width: 150,
-    height: 150,
+    width: windowWidth * 0.35,
+    height: windowHeight * 0.17,
+    resizeMode: 'center',
     marginHorizontal: windowWidth * 0.01,
   },
   textPaso: {
     flexDirection: 'row',
-    fontSize: 20,
+    fontSize: windowWidth * 0.04,
     color: 'black',
     marginBottom: windowHeight * 0.06,
     marginLeft: windowWidth * 0.25,
   },
   textSubtitle: {
     flexDirection: 'row',
-    fontSize: 30,
+    fontSize: windowWidth * 0.08,
     color: '#F2A01F',
     fontWeight: 'bold',
   },
@@ -127,19 +123,10 @@ const styles = StyleSheet.create({
   },
   // Linear Gradiant Style
   cardButtonGradient: {
-    flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderRadius: 10,
-    justifyContent: 'center',
     alignItems: 'center',
-    width: '80%',
-    marginBottom: windowHeight * 0.13,
-    marginTop: windowHeight * -0.07,
-    // alignItems: 'center',
-    // borderRadius: 8,
-    // flexWrap: 'wrap',
-    // padding: 10,
+    borderRadius: 8,
+    flexWrap: 'wrap',
+    padding: 10,
   },
   //Input styles
   containerForm: {
@@ -153,24 +140,24 @@ const styles = StyleSheet.create({
     height: windowHeight * 0.04,
     margin: 6,
     borderWidth: 1,
-    padding: 10,
+    padding: 3,
     backgroundColor: 'white',
     borderColor: '#2F2FBC',
     borderRadius: 5,
     color: 'black',
   },
   textContact: {
-    fontSize: 12,
+    fontSize: windowWidth * 0.03,
     color: '#2F2FBC',
     marginBottom: windowHeight * 0.03,
     textAlign: 'center',
     width: '70%',
   },
   buttonImg: {
-    width: 130,
-    height: 130,
-    borderRadius: 35,
-    marginTop: -20,
+    width: windowWidth * 0.5,
+    height: windowHeight * 0.3,
+    resizeMode: 'center',
+    marginTop: -(windowHeight * 0.09),
   },
   ////////////////
   fwSemiBold: {
@@ -183,7 +170,7 @@ const styles = StyleSheet.create({
   },
   cardButtonText: {
     color: 'white',
-    fontSize: 18,
+    fontSize: windowWidth * 0.05,
     textAlign: 'center',
     width: '100%',
   },

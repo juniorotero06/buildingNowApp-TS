@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import { ImageSourcePropType, ListRenderItem } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { WebViewLogin } from './webViewComponente';
 
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
@@ -13,6 +14,10 @@ interface Service {
   secondaryText: string;
   buttonText: string;
 }
+
+const navigationsPress = ({ navigation }) => {
+  navigation.navigate('login');
+};
 
 const ServiceItem: ListRenderItem<Service> = ({ item }) => {
   return (
@@ -64,15 +69,15 @@ const styles = StyleSheet.create({
   cardBody: {
     width: '75%',
     textAlign: 'center',
-    marginTop: 50,
+    marginTop: deviceHeight * 0.03,
   },
   cardTitle: {
     color: colors.orange,
-    fontSize: 35,
+    fontSize: deviceWidth * 0.07,
     textAlign: 'center',
   },
   cardText: {
-    fontSize: 20,
+    fontSize: deviceWidth * 0.05,
     textAlign: 'center',
     fontFamily: 'Quicksand-Medium',
     margin: 10,
@@ -96,7 +101,7 @@ const styles = StyleSheet.create({
   },
   cardButtonText: {
     color: colors.white,
-    fontSize: 18,
+    fontSize: deviceWidth * 0.05,
     textAlign: 'center',
     width: '100%',
   },

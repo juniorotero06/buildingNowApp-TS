@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { styles, windowHeight, windowWidth } from '../styles/styles';
-import { ImageBackground, TextInput, Text, Image, TouchableOpacity } from 'react-native';
+import { ImageBackground, TextInput, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 const background = require('../assets/images/background_grey.png');
 const button = require('../assets/images/bnEnviar.png');
 
@@ -17,11 +17,11 @@ const ContactScreen = () => {
       style={{
         ...styles.image,
         backgroundColor: 'white',
-        height: '100%',
+        height: '120%',
         alignItems: 'center',
       }}
     >
-      <Text style={{ ...styles.textContact, marginTop: 100 }}>
+      <Text style={{ ...styles.textContact, marginTop: windowHeight * 0.15 }}>
         Sus opiniones son importantes para nosotros. Ya sea una simple pregunta o una sugerencia valiosa, estamos aquí
         las 24 horas del día, los 7 días de la semana.
       </Text>
@@ -49,7 +49,7 @@ const ContactScreen = () => {
       <TextInput
         multiline={true}
         numberOfLines={4}
-        style={{ ...styles.input, height: '20%' }}
+        style={{ ...styles.input, height: '15%' }}
         onChangeText={mensaje => setMensaje(mensaje)}
         value={mensaje}
         placeholderTextColor="#d3d3d3"
@@ -65,7 +65,7 @@ const ContactScreen = () => {
           ...styles.textContact,
           width: '80%',
           marginBottom: 0,
-          marginTop: -28,
+          marginTop: -(windowHeight * 0.1),
         }}
       >
         Puede llamarnos por teléfono{' '}
@@ -73,7 +73,7 @@ const ContactScreen = () => {
           style={{
             fontWeight: 'bold',
             color: '#2F2FBC',
-            fontSize: 12,
+            fontSize: windowWidth * 0.03,
           }}
         >
           +573001234567
@@ -91,7 +91,7 @@ const ContactScreen = () => {
           style={{
             fontWeight: 'bold',
             color: '#2F2FBC',
-            fontSize: 12,
+            fontSize: windowWidth * 0.03,
           }}
         >
           contacto@buildingnow.com

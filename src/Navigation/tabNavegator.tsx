@@ -3,7 +3,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image } from 'react-native';
 import { MainStackNavigator, ContactStackNavigator, TestIttackNavigator, UneteStackNavigator } from './StackNavigator';
-import { styles } from '../styles/styles';
+import { styles, windowHeight, windowWidth } from '../styles/styles';
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
@@ -21,7 +21,7 @@ const BottomTabNavigator = () => {
           position: 'absolute',
           height: '9%',
           paddingBottom: 0,
-          paddingTop: 10,
+          paddingTop: windowHeight * 0.01,
         },
       })}
     >
@@ -30,6 +30,8 @@ const BottomTabNavigator = () => {
         component={MainStackNavigator}
         options={{
           headerShown: false,
+          tabBarLabel: 'Inicio',
+          tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarIcon: ({ focused }) => {
             iconName = focused
               ? require('../assets/icons/iconButtonNavBar/Inicio/inicio_activo.png')
@@ -43,6 +45,8 @@ const BottomTabNavigator = () => {
         component={TestIttackNavigator}
         options={{
           headerShown: false,
+          tabBarLabel: 'Pruebalo Ya',
+          tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarIcon: ({ focused }) => {
             iconName = focused
               ? require('../assets/icons/iconButtonNavBar/PruebaloYa/pruebalo_activo.png')
@@ -57,6 +61,7 @@ const BottomTabNavigator = () => {
         options={{
           headerShown: false,
           tabBarLabel: 'Únete',
+          tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarIcon: ({ focused }) => {
             iconName = focused
               ? require('../assets/icons/iconButtonNavBar/Unete/unete_activo.png')
@@ -70,6 +75,8 @@ const BottomTabNavigator = () => {
         component={ContactStackNavigator}
         options={{
           headerShown: false,
+          tabBarLabel: 'Contacto',
+          tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarIcon: ({ focused }) => {
             iconName = focused
               ? require('../assets/icons/iconButtonNavBar/Contacto/contacto_activo.png')
