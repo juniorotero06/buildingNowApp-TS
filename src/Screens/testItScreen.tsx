@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 const imgTestIt = require('../assets/images/img_testit.png');
 const textTestIt = require('../assets/images/text_testit.png');
 
-const TestItScreen = () => {
+const TestItScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image
@@ -26,7 +26,10 @@ const TestItScreen = () => {
           marginTop: windowHeight * 0.03,
         }}
       />
-      <TouchableOpacity style={{ ...styles.cardButton, bottom: windowHeight * 0.12, width: '70%' }}>
+      <TouchableOpacity
+        style={{ ...styles.cardButton, bottom: windowHeight * 0.12, width: '70%' }}
+        onPress={() => navigation.navigate('customer')}
+      >
         <LinearGradient
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}

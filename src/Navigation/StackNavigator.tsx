@@ -10,7 +10,7 @@ import ContactScreen from '../Screens/contactScreen';
 import HowFunctionScreen from '../Screens/howFunction';
 import TestItScreen from '../Screens/testItScreen';
 import UneteScreen from '../Screens/uneteScreen';
-import { WebViewLogin } from '../components/webViewComponente';
+import { WebViewLogin, WebViewCustomer, WebViewProvider } from '../components/webViewComponente';
 
 const Stack = createStackNavigator();
 
@@ -60,6 +60,7 @@ const TestIttackNavigator = () => {
       }}
     >
       <Stack.Screen name="testit" component={TestItScreen} options={{ headerTitle: 'Pruebalo Ya' }} />
+      <Stack.Screen name="customer" component={WebViewCustomer} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 };
@@ -75,6 +76,7 @@ const UneteStackNavigator = () => {
       }}
     >
       <Stack.Screen name="unete" component={UneteScreen} options={{ headerTitle: 'Únete' }} />
+      <Stack.Screen name="provider" component={WebViewProvider} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 };

@@ -9,7 +9,7 @@ const LOGIN = 'https://app.xervis.tk/login';
 const WebViewCustomer = () => {
   return (
     <View style={styles.container}>
-      <View style={{ width: '100%', height: '100%' }}>
+      <View style={{ width: '100%', height: '80%' }}>
         <WebView source={{ uri: CUSTUMER }}></WebView>
       </View>
     </View>
@@ -18,7 +18,7 @@ const WebViewCustomer = () => {
 const WebViewProvider = () => {
   return (
     <View style={styles.container}>
-      <View style={{ width: '100%', height: '100%' }}>
+      <View style={{ width: '100%', height: '80%' }}>
         <WebView source={{ uri: PROVIDER }}></WebView>
       </View>
     </View>
@@ -27,7 +27,7 @@ const WebViewProvider = () => {
 const WebViewLogin = () => {
   return (
     <View style={styles.container}>
-      <View style={{ width: '100%', height: '100%' }}>
+      <View style={{ width: '100%', height: '80%' }}>
         <WebView source={{ uri: LOGIN }}></WebView>
       </View>
     </View>

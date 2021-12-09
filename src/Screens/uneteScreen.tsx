@@ -5,7 +5,7 @@ import { View, Image, Text, TouchableOpacity } from 'react-native';
 const imgUnete = require('../assets/images/img_unete.png');
 const textUnete = require('../assets/images/text_unete.png');
 
-const UneteScreen = () => {
+const UneteScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image
@@ -27,7 +27,10 @@ const UneteScreen = () => {
         }}
       />
 
-      <TouchableOpacity style={{ ...styles.cardButton, bottom: windowHeight * 0.12, width: '70%' }}>
+      <TouchableOpacity
+        style={{ ...styles.cardButton, bottom: windowHeight * 0.12, width: '70%' }}
+        onPress={() => navigation.navigate('provider')}
+      >
         <LinearGradient
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
