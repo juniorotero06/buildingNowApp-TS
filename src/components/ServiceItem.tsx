@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import { ImageSourcePropType, ListRenderItem } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { WebViewLogin } from './webViewComponente';
+import { useNavigation } from '@react-navigation/native';
 
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
@@ -14,11 +14,7 @@ interface Service {
   secondaryText: string;
   buttonText: string;
 }
-
-const navigationsPress = ({ navigation }) => {
-  navigation.navigate('login');
-};
-
+const navigation = useNavigation();
 const ServiceItem: ListRenderItem<Service> = ({ item }) => {
   return (
     <View style={styles.card}>
@@ -28,7 +24,7 @@ const ServiceItem: ListRenderItem<Service> = ({ item }) => {
         <Text style={styles.cardText}>{item.primaryText}</Text>
         <Text style={[styles.cardText, styles.fwBold]}>{item.secondaryText}</Text>
       </View>
-      <TouchableOpacity style={styles.cardButton}>
+      <TouchableOpacity style={styles.cardButton} onPress={() => navigation.navigate('login')}>
         <LinearGradient
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
