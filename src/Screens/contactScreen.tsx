@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import { styles, windowHeight, windowWidth } from '../styles/styles';
-import { ImageBackground, TextInput, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { ImageBackground, TextInput, Text, Image, TouchableOpacity, Alert } from 'react-native';
+
+import axios from 'axios';
 const background = require('../assets/images/background_grey.png');
 const button = require('../assets/images/bnEnviar.png');
 
 const ContactScreen = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [asunto, setAsunto] = useState('');
-  const [mensaje, setMensaje] = useState('');
+  const [input, setInput] = useState({
+    name: '',
+    email: '',
+    asunto: '',
+    mensaje: '',
+  });
+
+  const handleSubmit = async () => {
+    await axios.post('https://email-gaira.dinolabs.dev/public/send-email', input).catch(error => {
+      console.error(error);
+    });
+  };
 
   return (
     <ImageBackground
@@ -27,22 +37,22 @@ const ContactScreen = () => {
       </Text>
       <TextInput
         style={styles.input}
-        onChangeText={name => setName(name)}
-        value={name}
+        onChangeText={name => setInput({ ...input, name })}
+        value={input.name}
         placeholderTextColor="#d3d3d3"
         placeholder="Nombre Completo"
       />
       <TextInput
         style={styles.input}
-        onChangeText={email => setEmail(email)}
-        value={email}
+        onChangeText={email => setInput({ ...input, email })}
+        value={input.email}
         placeholderTextColor="#d3d3d3"
         placeholder="Correo Electronico"
       />
       <TextInput
         style={styles.input}
-        onChangeText={asunto => setAsunto(asunto)}
-        value={asunto}
+        onChangeText={asunto => setInput({ ...input, asunto })}
+        value={input.asunto}
         placeholderTextColor="#d3d3d3"
         placeholder="Asunto"
       />
@@ -50,14 +60,14 @@ const ContactScreen = () => {
         multiline={true}
         numberOfLines={4}
         style={{ ...styles.input, height: '15%' }}
-        onChangeText={mensaje => setMensaje(mensaje)}
-        value={mensaje}
+        onChangeText={mensaje => setInput({ ...input, mensaje })}
+        value={input.mensaje}
         placeholderTextColor="#d3d3d3"
         placeholder="Mensaje"
         editable
         maxLength={40}
       />
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleSubmit}>
         <Image source={button} style={styles.buttonImg}></Image>
       </TouchableOpacity>
       <Text

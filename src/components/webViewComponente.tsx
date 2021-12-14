@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import { windowHeight } from '../styles/styles';
 import WebView from 'react-native-webview';
 
 const CUSTUMER = 'https://app.xervis.tk/signin/customer';
@@ -9,7 +10,7 @@ const LOGIN = 'https://app.xervis.tk/login';
 const WebViewCustomer = () => {
   return (
     <View style={styles.container}>
-      <View style={{ width: '100%', height: '80%' }}>
+      <View style={{ width: '100%', height: '100%', bottom: windowHeight * 0.05 }}>
         <WebView source={{ uri: CUSTUMER }}></WebView>
       </View>
     </View>
@@ -18,7 +19,7 @@ const WebViewCustomer = () => {
 const WebViewProvider = () => {
   return (
     <View style={styles.container}>
-      <View style={{ width: '100%', height: '80%' }}>
+      <View style={{ width: '100%', height: '100%', bottom: windowHeight * 0.05 }}>
         <WebView source={{ uri: PROVIDER }}></WebView>
       </View>
     </View>
@@ -27,7 +28,7 @@ const WebViewProvider = () => {
 const WebViewLogin = () => {
   return (
     <View style={styles.container}>
-      <View style={{ width: '100%', height: '80%' }}>
+      <View style={{ width: '100%', height: '100%', bottom: windowHeight * 0.06 }}>
         <WebView source={{ uri: LOGIN }}></WebView>
       </View>
     </View>
