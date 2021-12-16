@@ -6,16 +6,35 @@ import axios from 'axios';
 const background = require('../assets/images/background_grey.png');
 const button = require('../assets/images/bnEnviar.png');
 
+import { useForm, useFormState } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+const validationSchema = yup.object().shape({
+  name: yup.string().required('Nombre requerido'),
+  email: yup.string().email('Ingresa un E-mail valido').required('E-mail requerido'),
+  asunto: yup.string().required('Nombre requerido'),
+  mensaje: yup.string().required('Nombre requerido'),
+});
+
 const ContactScreen = () => {
-  const [input, setInput] = useState({
-    name: '',
-    email: '',
-    asunto: '',
-    mensaje: '',
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      name: '',
+      email: '',
+      asunto: '',
+      mensaje: '',
+      resolver: yupResolver(validationSchema),
+    },
   });
 
-  const handleSubmit = async () => {
-    await axios.post('https://email-gaira.dinolabs.dev/public/send-email', input).catch(error => {
+  const onSubmit = async () => {
+    await axios.post('https://email-gaira.dinolabs.dev/public/send-email', control._defaultValues).catch(error => {
       console.error(error);
     });
   };
@@ -35,41 +54,86 @@ const ContactScreen = () => {
         Sus opiniones son importantes para nosotros. Ya sea una simple pregunta o una sugerencia valiosa, estamos aquí
         las 24 horas del día, los 7 días de la semana.
       </Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={name => setInput({ ...input, name })}
-        value={input.name}
-        placeholderTextColor="#d3d3d3"
-        placeholder="Nombre Completo"
+      <Controller
+        control={control}
+        rules={{
+          required: true,
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput
+            style={styles.input}
+            onBlur={onBlur}
+            onChangeText={onChange}
+            value={value}
+            placeholderTextColor="#d3d3d3"
+            placeholder="Nombre Completo"
+          />
+        )}
+        name="name"
       />
-      <TextInput
-        style={styles.input}
-        onChangeText={email => setInput({ ...input, email })}
-        value={input.email}
-        placeholderTextColor="#d3d3d3"
-        placeholder="Correo Electronico"
+      {errors.name && <Text>This is required.</Text>}
+      <Controller
+        control={control}
+        rules={{
+          required: true,
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput
+            style={styles.input}
+            onBlur={onBlur}
+            onChangeText={onChange}
+            value={value}
+            placeholderTextColor="#d3d3d3"
+            placeholder="Correo Electronico"
+          />
+        )}
+        name="email"
       />
-      <TextInput
-        style={styles.input}
-        onChangeText={asunto => setInput({ ...input, asunto })}
-        value={input.asunto}
-        placeholderTextColor="#d3d3d3"
-        placeholder="Asunto"
+      {errors.email && <Text>This is required.</Text>}
+      <Controller
+        control={control}
+        rules={{
+          required: true,
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput
+            style={styles.input}
+            onBlur={onBlur}
+            onChangeText={onChange}
+            value={value}
+            placeholderTextColor="#d3d3d3"
+            placeholder="Asunto"
+          />
+        )}
+        name="asunto"
       />
-      <TextInput
-        multiline={true}
-        numberOfLines={4}
-        style={{ ...styles.input, height: '15%' }}
-        onChangeText={mensaje => setInput({ ...input, mensaje })}
-        value={input.mensaje}
-        placeholderTextColor="#d3d3d3"
-        placeholder="Mensaje"
-        editable
-        maxLength={40}
+      {errors.asunto && <Text>This is required.</Text>}
+      <Controller
+        control={control}
+        rules={{
+          maxLength: 100,
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput
+            multiline={true}
+            numberOfLines={4}
+            style={{ ...styles.input, height: '15%' }}
+            onBlur={onBlur}
+            onChangeText={onChange}
+            value={value}
+            placeholderTextColor="#d3d3d3"
+            placeholder="Mensaje"
+            editable
+            maxLength={100}
+          />
+        )}
+        name="mensaje"
       />
-      <TouchableOpacity onPress={handleSubmit}>
+      {errors.mensaje && <Text>This is required.</Text>}
+      <TouchableOpacity onPress={handleSubmit(onSubmit)}>
         <Image source={button} style={styles.buttonImg}></Image>
       </TouchableOpacity>
+
       <Text
         style={{
           ...styles.textContact,
