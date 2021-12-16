@@ -1,11 +1,11 @@
 import React from 'react';
-import {styles, windowHeight, windowWidth} from '../styles/styles';
-import {View, Image, Text} from 'react-native';
+import { styles, windowHeight, windowWidth } from '../styles/styles';
+import { View, Image, Text, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 const imgTestIt = require('../assets/images/img_testit.png');
 const textTestIt = require('../assets/images/text_testit.png');
 
-const TestItScreen = () => {
+const TestItScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image
@@ -21,21 +21,25 @@ const TestItScreen = () => {
         source={imgTestIt}
         style={{
           ...styles.imgHf,
-          width: '75%',
-          height: '45%',
+          width: '80%',
+          height: '50%',
           marginTop: windowHeight * 0.03,
         }}
       />
-      <LinearGradient
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 0}}
-        locations={[0.1, 1]}
-        colors={['#2F2FBC', '#9310ea']}
-        style={styles.cardButtonGradient}>
-        <Text style={{...styles.textButton, fontSize: windowWidth * 0.05}}>
-          ¡Haz clic aquí y prueba ya!
-        </Text>
-      </LinearGradient>
+      <TouchableOpacity
+        style={{ ...styles.cardButton, bottom: windowHeight * 0.12, width: '70%' }}
+        onPress={() => navigation.navigate('customer')}
+      >
+        <LinearGradient
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          locations={[0.1, 1]}
+          colors={['#2F2FBC', '#9310ea']}
+          style={styles.cardButtonGradient}
+        >
+          <Text style={[styles.cardButtonText, styles.fwSemiBold]}>¡Haz clic aquí y prueba ya!</Text>
+        </LinearGradient>
+      </TouchableOpacity>
     </View>
   );
 };

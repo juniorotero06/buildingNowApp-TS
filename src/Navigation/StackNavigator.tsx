@@ -10,6 +10,7 @@ import ContactScreen from '../Screens/contactScreen';
 import HowFunctionScreen from '../Screens/howFunction';
 import TestItScreen from '../Screens/testItScreen';
 import UneteScreen from '../Screens/uneteScreen';
+import { WebViewLogin, WebViewCustomer, WebViewProvider } from '../components/webViewComponente';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ function MainStackNavigator() {
       <Stack.Screen name="services" component={ServicesScreen} options={{ headerTitle: 'Servicios' }} />
       <Stack.Screen name="apoyo" component={ApoyoScreen} options={{ headerTitle: 'Apoyo Institucional' }} />
       <Stack.Screen name="howf" component={HowFunctionScreen} options={{ headerTitle: '¿Cómo Funciona?' }} />
+      <Stack.Screen name="login" component={WebViewLogin} />
     </Stack.Navigator>
   );
 }
@@ -58,6 +60,7 @@ const TestIttackNavigator = () => {
       }}
     >
       <Stack.Screen name="testit" component={TestItScreen} options={{ headerTitle: 'Pruebalo Ya' }} />
+      <Stack.Screen name="customer" component={WebViewCustomer} />
     </Stack.Navigator>
   );
 };
@@ -73,6 +76,7 @@ const UneteStackNavigator = () => {
       }}
     >
       <Stack.Screen name="unete" component={UneteScreen} options={{ headerTitle: 'Únete' }} />
+      <Stack.Screen name="provider" component={WebViewProvider} />
     </Stack.Navigator>
   );
 };
