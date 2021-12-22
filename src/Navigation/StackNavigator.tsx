@@ -12,9 +12,12 @@ import TestItScreen from '../Screens/testItScreen';
 import UneteScreen from '../Screens/uneteScreen';
 import { WebViewLogin, WebViewCustomer, WebViewProvider } from '../components/webViewComponente';
 
+import { useTranslation } from 'react-i18next';
+
 const Stack = createStackNavigator();
 
 function MainStackNavigator() {
+  const { t, i18n } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -25,16 +28,17 @@ function MainStackNavigator() {
       }}
     >
       <Stack.Screen name="home" component={HomeScreen} options={{ headerShown: false }} />
-      <Stack.Screen name="About" component={AboutScreen} options={{ headerTitle: 'Nosotros' }} />
-      <Stack.Screen name="services" component={ServicesScreen} options={{ headerTitle: 'Servicios' }} />
+      <Stack.Screen name="About" component={AboutScreen} options={{ headerTitle: t('About') }} />
+      <Stack.Screen name="services" component={ServicesScreen} options={{ headerTitle: t('Services') }} />
       <Stack.Screen name="apoyo" component={ApoyoScreen} options={{ headerTitle: 'Apoyo Institucional' }} />
-      <Stack.Screen name="howf" component={HowFunctionScreen} options={{ headerTitle: '¿Cómo Funciona?' }} />
+      <Stack.Screen name="howf" component={HowFunctionScreen} options={{ headerTitle: t('howf') }} />
       <Stack.Screen name="login" component={WebViewLogin} />
     </Stack.Navigator>
   );
 }
 
 const ContactStackNavigator = () => {
+  const { t, i18n } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -44,12 +48,13 @@ const ContactStackNavigator = () => {
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}
     >
-      <Stack.Screen name="contact" component={ContactScreen} options={{ headerTitle: 'Contacto' }} />
+      <Stack.Screen name="contact" component={ContactScreen} options={{ headerTitle: t('Contact') }} />
     </Stack.Navigator>
   );
 };
 
 const TestIttackNavigator = () => {
+  const { t, i18n } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -59,13 +64,14 @@ const TestIttackNavigator = () => {
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}
     >
-      <Stack.Screen name="testit" component={TestItScreen} options={{ headerTitle: 'Pruebalo Ya' }} />
+      <Stack.Screen name="testit" component={TestItScreen} options={{ headerTitle: t('TryItNow') }} />
       <Stack.Screen name="customer" component={WebViewCustomer} />
     </Stack.Navigator>
   );
 };
 
 const UneteStackNavigator = () => {
+  const { t, i18n } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -75,7 +81,7 @@ const UneteStackNavigator = () => {
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}
     >
-      <Stack.Screen name="unete" component={UneteScreen} options={{ headerTitle: 'Únete' }} />
+      <Stack.Screen name="unete" component={UneteScreen} options={{ headerTitle: t('JoinUp') }} />
       <Stack.Screen name="provider" component={WebViewProvider} />
     </Stack.Navigator>
   );

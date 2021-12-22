@@ -2,21 +2,35 @@ import React from 'react';
 import { styles, windowHeight, windowWidth } from '../styles/styles';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { useTranslation } from 'react-i18next';
 const imgTestIt = require('../assets/images/img_testit.png');
-const textTestIt = require('../assets/images/text_testit.png');
 
 const TestItScreen = ({ navigation }) => {
+  const { t, i18n } = useTranslation();
   return (
     <View style={styles.container}>
-      <Image
-        source={textTestIt}
-        style={{
-          ...styles.imgHf,
-          width: '80%',
-          height: '30%',
-          marginTop: windowHeight * 0.02,
-        }}
-      />
+      {i18n.language === 'es' ? (
+        <Image
+          source={require('../assets/images/text_testit.png')}
+          style={{
+            ...styles.imgHf,
+            width: '80%',
+            height: '30%',
+            marginTop: windowHeight * 0.02,
+          }}
+        />
+      ) : (
+        <Image
+          source={require('../assets/images/text_testitEn.png')}
+          style={{
+            ...styles.imgHf,
+            width: '80%',
+            height: '30%',
+            marginTop: windowHeight * 0.02,
+          }}
+        />
+      )}
+
       <Image
         source={imgTestIt}
         style={{
@@ -37,7 +51,7 @@ const TestItScreen = ({ navigation }) => {
           colors={['#2F2FBC', '#9310ea']}
           style={styles.cardButtonGradient}
         >
-          <Text style={[styles.cardButtonText, styles.fwSemiBold]}>¡Haz clic aquí y prueba ya!</Text>
+          <Text style={[styles.cardButtonText, styles.fwSemiBold]}>{t('btnTextit')}</Text>
         </LinearGradient>
       </TouchableOpacity>
     </View>

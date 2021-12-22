@@ -1,22 +1,36 @@
 import React from 'react';
 import { styles, windowWidth, windowHeight } from '../styles/styles';
+import { useTranslation } from 'react-i18next';
 import LinearGradient from 'react-native-linear-gradient';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 const imgUnete = require('../assets/images/img_unete.png');
-const textUnete = require('../assets/images/text_unete.png');
 
 const UneteScreen = ({ navigation }) => {
+  const { t, i18n } = useTranslation();
   return (
     <View style={styles.container}>
-      <Image
-        source={textUnete}
-        style={{
-          ...styles.imgHf,
-          width: '80%',
-          height: '30%',
-          marginTop: windowHeight * 0.02,
-        }}
-      />
+      {i18n.language === 'es' ? (
+        <Image
+          source={require('../assets/images/text_unete.png')}
+          style={{
+            ...styles.imgHf,
+            width: '80%',
+            height: '30%',
+            marginTop: windowHeight * 0.02,
+          }}
+        />
+      ) : (
+        <Image
+          source={require('../assets/images/text_uneteEn.png')}
+          style={{
+            ...styles.imgHf,
+            width: '80%',
+            height: '30%',
+            marginTop: windowHeight * 0.02,
+          }}
+        />
+      )}
+
       <Image
         source={imgUnete}
         style={{
@@ -38,7 +52,7 @@ const UneteScreen = ({ navigation }) => {
           colors={['#FFAA00', '#FF7600']}
           style={styles.cardButtonGradient}
         >
-          <Text style={[styles.cardButtonText, styles.fwSemiBold]}>¡Haz clic aquí y unete a nostros!</Text>
+          <Text style={[styles.cardButtonText, styles.fwSemiBold]}>{t('btnUnete')}</Text>
         </LinearGradient>
       </TouchableOpacity>
     </View>

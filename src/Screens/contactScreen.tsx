@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { styles, windowHeight, windowWidth } from '../styles/styles';
 import { ImageBackground, TextInput, Text, Image, TouchableOpacity, Alert } from 'react-native';
 
+import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 const background = require('../assets/images/background_grey.png');
-const button = require('../assets/images/bnEnviar.png');
 
 import { useForm, useFormState } from 'react-hook-form';
 import { Controller } from 'react-hook-form';
@@ -19,6 +19,7 @@ const validationSchema = yup.object().shape({
 });
 
 const ContactScreen = () => {
+  const { t, i18n } = useTranslation();
   const {
     control,
     handleSubmit,
@@ -50,10 +51,7 @@ const ContactScreen = () => {
         alignItems: 'center',
       }}
     >
-      <Text style={{ ...styles.textContact, marginTop: windowHeight * 0.15 }}>
-        Sus opiniones son importantes para nosotros. Ya sea una simple pregunta o una sugerencia valiosa, estamos aquí
-        las 24 horas del día, los 7 días de la semana.
-      </Text>
+      <Text style={{ ...styles.textContact, marginTop: windowHeight * 0.15 }}>{t('textContact')}</Text>
       <Controller
         control={control}
         rules={{
@@ -66,7 +64,7 @@ const ContactScreen = () => {
             onChangeText={onChange}
             value={value}
             placeholderTextColor="#d3d3d3"
-            placeholder="Nombre Completo"
+            placeholder={t('placeHolderName')}
           />
         )}
         name="name"
@@ -84,7 +82,7 @@ const ContactScreen = () => {
             onChangeText={onChange}
             value={value}
             placeholderTextColor="#d3d3d3"
-            placeholder="Correo Electronico"
+            placeholder={t('placeHolderEmail')}
           />
         )}
         name="email"
@@ -102,7 +100,7 @@ const ContactScreen = () => {
             onChangeText={onChange}
             value={value}
             placeholderTextColor="#d3d3d3"
-            placeholder="Asunto"
+            placeholder={t('placeHolderSubject')}
           />
         )}
         name="asunto"
@@ -122,7 +120,7 @@ const ContactScreen = () => {
             onChangeText={onChange}
             value={value}
             placeholderTextColor="#d3d3d3"
-            placeholder="Mensaje"
+            placeholder={t('placeHolderMsg')}
             editable
             maxLength={100}
           />
@@ -131,7 +129,11 @@ const ContactScreen = () => {
       />
       {errors.mensaje && <Text>This is required.</Text>}
       <TouchableOpacity onPress={handleSubmit(onSubmit)}>
-        <Image source={button} style={styles.buttonImg}></Image>
+        {i18n.language === 'es' ? (
+          <Image source={require('../assets/images/bnEnviar.png')} style={styles.buttonImg}></Image>
+        ) : (
+          <Image source={require('../assets/images/btn_send.png')} style={styles.buttonImg}></Image>
+        )}
       </TouchableOpacity>
 
       <Text
@@ -142,7 +144,7 @@ const ContactScreen = () => {
           marginTop: -(windowHeight * 0.1),
         }}
       >
-        Puede llamarnos por teléfono{' '}
+        {t('telText')}{' '}
         <Text
           style={{
             fontWeight: 'bold',
@@ -160,7 +162,7 @@ const ContactScreen = () => {
           width: '80%',
         }}
       >
-        o escribirnos al correo{' '}
+        {t('textEmail')}{' '}
         <Text
           style={{
             fontWeight: 'bold',

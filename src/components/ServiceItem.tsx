@@ -57,8 +57,9 @@ const styles = StyleSheet.create({
   },
   cardImage: {
     alignSelf: 'center',
-    width: deviceWidth * 0.9,
-    height: deviceHeight * 0.35,
+    borderRadius: 10,
+    width: deviceWidth * 0.8,
+    height: deviceHeight * 0.3,
     top: -(deviceWidth * 0.35),
     position: 'absolute',
   },

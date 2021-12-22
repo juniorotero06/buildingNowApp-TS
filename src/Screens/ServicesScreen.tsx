@@ -4,33 +4,36 @@ import Carousel from 'react-native-snap-carousel';
 
 import ServiceItem from '../components/ServiceItem';
 
+import { useTranslation } from 'react-i18next';
+
 const deviceWidth = Dimensions.get('window').width;
 
-const items = [
-  {
-    imageName: require('../assets/images/services/plumber.png'),
-    title: 'Plomeria',
-    primaryText: 'La plomería es un servicio que muchas veces necesitamos urgente.',
-    secondaryText: 'Incluye visita, cotización y arreglo.',
-    buttonText: '¡Haz clic aquí y solicita ya tu servicio!',
-  },
-  {
-    imageName: require('../assets/images/services/accountancy.png'),
-    title: 'Contaduría',
-    primaryText: 'La contabilidad es un servicio que requiere atención inmediata.',
-    secondaryText: 'Incluye visita, cotización y gestión.',
-    buttonText: '¡Haz clic aquí y solicita ya tu servicio!',
-  },
-  {
-    imageName: require('../assets/images/services/administration.png'),
-    title: 'Administración',
-    primaryText: 'La administración es un servicio profesional y de asistencia.',
-    secondaryText: 'Incluye visita, cotización y arreglo.',
-    buttonText: '¡Haz clic aquí y solicita ya tu servicio!',
-  },
-];
-
 const ServicesScreen = () => {
+  const { t, i18n } = useTranslation();
+
+  const items = [
+    {
+      imageName: require('../assets/images/services/cubiertas.jpg'),
+      title: t('cover'),
+      primaryText: t('primaryTextCover'),
+      secondaryText: t('secondaryText'),
+      buttonText: t('buttonText'),
+    },
+    {
+      imageName: require('../assets/images/services/impermeabilizacion.jpg'),
+      title: t('Waterproofing'),
+      primaryText: t('primaryTextWaterproofing'),
+      secondaryText: t('secondaryText'),
+      buttonText: t('buttonText'),
+    },
+    {
+      imageName: require('../assets/images/services/mantenimiento-de-fachadas.jpg'),
+      title: t('facadeMaintenance'),
+      primaryText: t('primaryTextFacadeMaintenance'),
+      secondaryText: t('secondaryText'),
+      buttonText: t('buttonText'),
+    },
+  ];
   return (
     <View style={styles.container}>
       <Carousel

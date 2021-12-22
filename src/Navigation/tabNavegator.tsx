@@ -2,16 +2,21 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image } from 'react-native';
+
+import { useTranslation } from 'react-i18next';
+
 import { MainStackNavigator, ContactStackNavigator, TestIttackNavigator, UneteStackNavigator } from './StackNavigator';
 import { styles, windowHeight, windowWidth } from '../styles/styles';
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
+  const { t, i18n } = useTranslation();
   let iconName;
   return (
     <Tab.Navigator
       initialRouteName="Inicio"
       screenOptions={() => ({
+        tabBarHideOnKeyboard: true,
         tabBarActiveTintColor: '#F2A01F',
         tabBarInactiveTintColor: 'white',
         headerShown: false,
@@ -30,7 +35,7 @@ const BottomTabNavigator = () => {
         component={MainStackNavigator}
         options={{
           headerShown: false,
-          tabBarLabel: 'Inicio',
+          tabBarLabel: t('Home'),
           tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarIcon: ({ focused }) => {
             iconName = focused
@@ -45,7 +50,7 @@ const BottomTabNavigator = () => {
         component={TestIttackNavigator}
         options={{
           headerShown: false,
-          tabBarLabel: 'Pruebalo Ya',
+          tabBarLabel: t('TryItNow'),
           tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarIcon: ({ focused }) => {
             iconName = focused
@@ -60,7 +65,7 @@ const BottomTabNavigator = () => {
         component={UneteStackNavigator}
         options={{
           headerShown: false,
-          tabBarLabel: 'Únete',
+          tabBarLabel: t('JoinUp'),
           tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarIcon: ({ focused }) => {
             iconName = focused
@@ -75,7 +80,7 @@ const BottomTabNavigator = () => {
         component={ContactStackNavigator}
         options={{
           headerShown: false,
-          tabBarLabel: 'Contacto',
+          tabBarLabel: t('Contact'),
           tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarIcon: ({ focused }) => {
             iconName = focused

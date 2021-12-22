@@ -1,20 +1,24 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 import { styles, windowWidth, windowHeight } from '../styles/styles';
+
+import { useTranslation } from 'react-i18next';
+
 const img1 = require('../assets/images/Grupo_222.png');
 const img2 = require('../assets/images/Grupo_809.png');
 const img3 = require('../assets/images/Grupo_1102.png');
 
 const HowFunctionScreen = () => {
+  const { t, i18n } = useTranslation();
   return (
     <View style={styles.container}>
       <View style={styles.howFContainer}>
         <Image source={img1} style={styles.imgHf} />
-        <Text style={styles.textPaso}>Paso 1:</Text>
-        <Text style={styles.textSubtitle}>Regístrate</Text>
+        <Text style={styles.textPaso}>{t('step_1')}</Text>
+        <Text style={styles.textSubtitle}>{t('register')}</Text>
       </View>
       <View style={styles.howFContainer}>
-        <Text style={{ ...styles.textPaso, marginRight: -(windowWidth * 0.1) }}>Paso 2:</Text>
+        <Text style={{ ...styles.textPaso, marginRight: -(windowWidth * 0.1) }}>{t('step_2')}</Text>
         <Text
           style={{
             ...styles.textSubtitle,
@@ -22,7 +26,7 @@ const HowFunctionScreen = () => {
             marginRight: windowWidth * 0.25,
           }}
         >
-          Navega
+          {t('Browse')}
         </Text>
         <Image source={img2} style={styles.imgHf} />
       </View>
@@ -43,10 +47,10 @@ const HowFunctionScreen = () => {
             marginTop: windowHeight * 0.005,
           }}
         >
-          Paso 3:
+          {t('step_3')}
         </Text>
-        <Text style={{ ...styles.textSubtitle, fontSize: windowWidth * 0.07 }}>Pide o confirma</Text>
-        <Text style={{ ...styles.textSubtitle, fontSize: windowWidth * 0.07 }}>tus servicios al instante</Text>
+        <Text style={{ ...styles.textSubtitle, fontSize: windowWidth * 0.07 }}>{t('step_3_Text_1')}</Text>
+        <Text style={{ ...styles.textSubtitle, fontSize: windowWidth * 0.07 }}>{t('step_3_Text_2')}</Text>
       </View>
     </View>
   );

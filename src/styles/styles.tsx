@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { Dimensions } from 'react-native';
+import SwitchSelector from 'react-native-switch-selector';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -173,6 +174,11 @@ const styles = StyleSheet.create({
     fontSize: windowWidth * 0.05,
     textAlign: 'center',
     width: '100%',
+  },
+  switchSelector: {
+    width: '35%',
+    top: windowHeight * 0.1,
+    marginLeft: windowWidth * 0.6,
   },
 });
 
