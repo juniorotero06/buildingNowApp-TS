@@ -4,16 +4,15 @@ import { styles, windowWidth, windowHeight } from '../styles/styles';
 
 import { useTranslation } from 'react-i18next';
 
-const img1 = require('../assets/images/Grupo_222.png');
-const img2 = require('../assets/images/Grupo_809.png');
-const img3 = require('../assets/images/Grupo_1102.png');
-
 const HowFunctionScreen = () => {
   const { t, i18n } = useTranslation();
   return (
     <View style={styles.container}>
       <View style={styles.howFContainer}>
-        <Image source={img1} style={styles.imgHf} />
+        <Image
+          source={{ uri: 'https://buildingnow.co/assets-building-app/images/Grupo_222.png' }}
+          style={styles.imgHf}
+        />
         <Text style={styles.textPaso}>{t('step_1')}</Text>
         <Text style={styles.textSubtitle}>{t('register')}</Text>
       </View>
@@ -28,7 +27,10 @@ const HowFunctionScreen = () => {
         >
           {t('Browse')}
         </Text>
-        <Image source={img2} style={styles.imgHf} />
+        <Image
+          source={{ uri: 'https://buildingnow.co/assets-building-app/images/Grupo_809.png' }}
+          style={styles.imgHf}
+        />
       </View>
       <View
         style={{
@@ -38,7 +40,10 @@ const HowFunctionScreen = () => {
           width: '90%',
         }}
       >
-        <Image source={img3} style={styles.imgHf} />
+        <Image
+          source={{ uri: 'https://buildingnow.co/assets-building-app/images/Grupo_1102.png' }}
+          style={styles.imgHf}
+        />
         <Text
           style={{
             ...styles.textPaso,

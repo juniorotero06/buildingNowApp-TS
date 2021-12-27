@@ -3,7 +3,7 @@ import { styles, windowWidth, windowHeight } from '../styles/styles';
 import { useTranslation } from 'react-i18next';
 import LinearGradient from 'react-native-linear-gradient';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
-const imgUnete = require('../assets/images/img_unete.png');
+const imgUnete = 'https://buildingnow.co/assets-building-app/images/img_unete.png';
 
 const UneteScreen = ({ navigation }) => {
   const { t, i18n } = useTranslation();
@@ -11,7 +11,7 @@ const UneteScreen = ({ navigation }) => {
     <View style={styles.container}>
       {i18n.language === 'es' ? (
         <Image
-          source={require('../assets/images/text_unete.png')}
+          source={{ uri: 'https://buildingnow.co/assets-building-app/images/text_unete.png' }}
           style={{
             ...styles.imgHf,
             width: '80%',
@@ -21,7 +21,7 @@ const UneteScreen = ({ navigation }) => {
         />
       ) : (
         <Image
-          source={require('../assets/images/text_uneteEn.png')}
+          source={{ uri: 'https://buildingnow.co/assets-building-app/images/text_uneteEn.png' }}
           style={{
             ...styles.imgHf,
             width: '80%',
@@ -32,7 +32,7 @@ const UneteScreen = ({ navigation }) => {
       )}
 
       <Image
-        source={imgUnete}
+        source={{ uri: imgUnete }}
         style={{
           ...styles.imgHf,
           width: '150%',

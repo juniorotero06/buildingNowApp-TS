@@ -39,9 +39,9 @@ const BottomTabNavigator = () => {
           tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarIcon: ({ focused }) => {
             iconName = focused
-              ? require('../assets/icons/iconButtonNavBar/Inicio/inicio_activo.png')
-              : require('../assets/icons/iconButtonNavBar/Inicio/inicio.png');
-            return <Image source={iconName} style={styles.libraryIcon} />;
+              ? 'https://buildingnow.co/assets-building-app/icons/iconButtonNavBar/Inicio/inicio_activo.png'
+              : 'https://buildingnow.co/assets-building-app/icons/iconButtonNavBar/Inicio/inicio.png';
+            return <Image source={{ uri: iconName }} style={styles.libraryIcon} />;
           },
         }}
       />
@@ -54,9 +54,9 @@ const BottomTabNavigator = () => {
           tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarIcon: ({ focused }) => {
             iconName = focused
-              ? require('../assets/icons/iconButtonNavBar/PruebaloYa/pruebalo_activo.png')
-              : require('../assets/icons/iconButtonNavBar/PruebaloYa/pruebalo.png');
-            return <Image source={iconName} style={styles.libraryIcon} />;
+              ? 'https://buildingnow.co/assets-building-app/icons/iconButtonNavBar/PruebaloYa/pruebalo_activo.png'
+              : 'https://buildingnow.co/assets-building-app/icons/iconButtonNavBar/PruebaloYa/pruebalo.png';
+            return <Image source={{ uri: iconName }} style={styles.libraryIcon} />;
           },
         }}
       />
@@ -69,9 +69,9 @@ const BottomTabNavigator = () => {
           tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarIcon: ({ focused }) => {
             iconName = focused
-              ? require('../assets/icons/iconButtonNavBar/Unete/unete_activo.png')
-              : require('../assets/icons/iconButtonNavBar/Unete/unete.png');
-            return <Image source={iconName} style={styles.libraryIcon} />;
+              ? 'https://buildingnow.co/assets-building-app/icons/iconButtonNavBar/Unete/unete_activo.png'
+              : 'https://buildingnow.co/assets-building-app/icons/iconButtonNavBar/Unete/unete.png';
+            return <Image source={{ uri: iconName }} style={styles.libraryIcon} />;
           },
         }}
       />
@@ -84,9 +84,9 @@ const BottomTabNavigator = () => {
           tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarIcon: ({ focused }) => {
             iconName = focused
-              ? require('../assets/icons/iconButtonNavBar/Contacto/contacto_activo.png')
-              : require('../assets/icons/iconButtonNavBar/Contacto/contacto.png');
-            return <Image source={iconName} style={styles.libraryIcon} />;
+              ? 'https://buildingnow.co/assets-building-app/icons/iconButtonNavBar/Contacto/contacto_activo.png'
+              : 'https://buildingnow.co/assets-building-app/icons/iconButtonNavBar/Contacto/contacto.png';
+            return <Image source={{ uri: iconName }} style={styles.libraryIcon} />;
           },
         }}
       />

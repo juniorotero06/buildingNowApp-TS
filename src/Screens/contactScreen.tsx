@@ -4,7 +4,7 @@ import { ImageBackground, TextInput, Text, Image, TouchableOpacity, Alert } from
 
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
-const background = require('../assets/images/background_grey.png');
+const background = 'https://buildingnow.co/assets-building-app/images/background_grey.png';
 
 import { useForm, useFormState } from 'react-hook-form';
 import { Controller } from 'react-hook-form';
@@ -42,7 +42,7 @@ const ContactScreen = () => {
 
   return (
     <ImageBackground
-      source={background}
+      source={{ uri: background }}
       resizeMode="cover"
       style={{
         ...styles.image,
@@ -130,9 +130,15 @@ const ContactScreen = () => {
       {errors.mensaje && <Text>This is required.</Text>}
       <TouchableOpacity onPress={handleSubmit(onSubmit)}>
         {i18n.language === 'es' ? (
-          <Image source={require('../assets/images/bnEnviar.png')} style={styles.buttonImg}></Image>
+          <Image
+            source={{ uri: 'https://buildingnow.co/assets-building-app/images/bnEnviar.png' }}
+            style={styles.buttonImg}
+          ></Image>
         ) : (
-          <Image source={require('../assets/images/btn_send.png')} style={styles.buttonImg}></Image>
+          <Image
+            source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_send.png' }}
+            style={styles.buttonImg}
+          ></Image>
         )}
       </TouchableOpacity>
 

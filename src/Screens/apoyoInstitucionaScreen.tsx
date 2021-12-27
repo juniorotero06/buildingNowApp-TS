@@ -1,15 +1,15 @@
 import React from 'react';
 import { styles, windowHeight } from '../styles/styles';
 import { ImageBackground, View, Image } from 'react-native';
-const background = require('../assets/images/background_grey.png');
-const logoGobernacion = require('../assets/images/escudo_gobernacion.png');
-const logoActivate = require('../assets/images/logo_activate.png');
-const logoImpretics = require('../assets/images/logo_impretics.png');
+const background = 'https://buildingnow.co/assets-building-app/images/background_grey.png';
+const logoGobernacion = 'https://buildingnow.co/assets-building-app/images/escudo_gobernacion.png';
+const logoActivate = 'https://buildingnow.co/assets-building-app/images/logo_activate.png';
+const logoImpretics = 'https://buildingnow.co/assets-building-app/images/logo_impretics.png';
 
 const ApoyoScreen = () => {
   return (
     <ImageBackground
-      source={background}
+      source={{ uri: background }}
       resizeMode="cover"
       style={{ ...styles.image, backgroundColor: 'white', height: '120%' }}
     >
@@ -21,7 +21,7 @@ const ApoyoScreen = () => {
         }}
       >
         <Image
-          source={logoGobernacion}
+          source={{ uri: logoGobernacion }}
           style={{
             ...styles.logoWelcome,
             width: '70%',
@@ -29,7 +29,7 @@ const ApoyoScreen = () => {
           }}
         />
         <Image
-          source={logoImpretics}
+          source={{ uri: logoImpretics }}
           style={{
             ...styles.logoWelcome,
             width: '70%',
@@ -37,7 +37,7 @@ const ApoyoScreen = () => {
           }}
         />
         <Image
-          source={logoActivate}
+          source={{ uri: logoActivate }}
           style={{
             ...styles.logoWelcome,
             width: '70%',

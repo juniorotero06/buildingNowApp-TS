@@ -3,7 +3,7 @@ import { styles, windowHeight, windowWidth } from '../styles/styles';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useTranslation } from 'react-i18next';
-const imgTestIt = require('../assets/images/img_testit.png');
+const imgTestIt = 'https://buildingnow.co/assets-building-app/images/img_testit.png';
 
 const TestItScreen = ({ navigation }) => {
   const { t, i18n } = useTranslation();
@@ -11,7 +11,7 @@ const TestItScreen = ({ navigation }) => {
     <View style={styles.container}>
       {i18n.language === 'es' ? (
         <Image
-          source={require('../assets/images/text_testit.png')}
+          source={{ uri: 'https://buildingnow.co/assets-building-app/images/text_testit.png' }}
           style={{
             ...styles.imgHf,
             width: '80%',
@@ -21,7 +21,7 @@ const TestItScreen = ({ navigation }) => {
         />
       ) : (
         <Image
-          source={require('../assets/images/text_testitEn.png')}
+          source={{ uri: 'https://buildingnow.co/assets-building-app/images/text_testitEn.png' }}
           style={{
             ...styles.imgHf,
             width: '80%',
@@ -32,7 +32,7 @@ const TestItScreen = ({ navigation }) => {
       )}
 
       <Image
-        source={imgTestIt}
+        source={{ uri: imgTestIt }}
         style={{
           ...styles.imgHf,
           width: '80%',

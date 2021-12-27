@@ -25,23 +25,41 @@ const HomeScreen = ({ navigation }) => {
 
         <TouchableOpacity onPress={() => navigation.navigate('About')}>
           {i18n.language === 'es' ? (
-            <Image style={styles.button} source={require('../assets/images/btn_nosotros.png')} />
+            <Image
+              style={styles.button}
+              source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_nosotros.png' }}
+            />
           ) : (
-            <Image style={styles.button} source={require('../assets/images/btn_about.png')} />
+            <Image
+              style={styles.button}
+              source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_about.png' }}
+            />
           )}
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('services')}>
           {i18n.language === 'es' ? (
-            <Image style={styles.button} source={require('../assets/images/btn_servicios.png')} />
+            <Image
+              style={styles.button}
+              source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_servicios.png' }}
+            />
           ) : (
-            <Image style={styles.button} source={require('../assets/images/btn_services.png')} />
+            <Image
+              style={styles.button}
+              source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_services.png' }}
+            />
           )}
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('howf')}>
           {i18n.language === 'es' ? (
-            <Image style={styles.button} source={require('../assets/images/btn_howf.png')} />
+            <Image
+              style={styles.button}
+              source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_howf.png' }}
+            />
           ) : (
-            <Image style={styles.button} source={require('../assets/images/btn_howdoes.png')} />
+            <Image
+              style={styles.button}
+              source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_howdoes.png' }}
+            />
           )}
         </TouchableOpacity>
         <SwitchSelector
