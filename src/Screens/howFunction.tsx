@@ -5,7 +5,7 @@ import { styles, windowWidth, windowHeight } from '../styles/styles';
 import { useTranslation } from 'react-i18next';
 
 const HowFunctionScreen = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <View style={styles.container}>
       <View style={styles.howFContainer}>
@@ -25,7 +25,7 @@ const HowFunctionScreen = () => {
             marginRight: windowWidth * 0.25,
           }}
         >
-          {t('Browse')}
+          {t('browse')}
         </Text>
         <Image
           source={{ uri: 'https://buildingnow.co/assets-building-app/images/Grupo_809.png' }}

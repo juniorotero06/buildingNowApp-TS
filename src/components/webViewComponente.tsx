@@ -11,7 +11,7 @@ const WebViewCustomer = () => {
   return (
     <View style={styles.container}>
       <View style={{ width: '100%', height: '100%', bottom: windowHeight * 0.05 }}>
-        <WebView source={{ uri: CUSTUMER }}></WebView>
+        <WebView source={{ uri: CUSTUMER }} />
       </View>
     </View>
   );
@@ -20,7 +20,7 @@ const WebViewProvider = () => {
   return (
     <View style={styles.container}>
       <View style={{ width: '100%', height: '100%', bottom: windowHeight * 0.05 }}>
-        <WebView source={{ uri: PROVIDER }}></WebView>
+        <WebView source={{ uri: PROVIDER }} />
       </View>
     </View>
   );
@@ -29,7 +29,7 @@ const WebViewLogin = () => {
   return (
     <View style={styles.container}>
       <View style={{ width: '100%', height: '100%', bottom: windowHeight * 0.06 }}>
-        <WebView source={{ uri: LOGIN }}></WebView>
+        <WebView source={{ uri: LOGIN }} />
       </View>
     </View>
   );

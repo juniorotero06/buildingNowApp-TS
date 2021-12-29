@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image } from 'react-native';
@@ -6,11 +5,11 @@ import { Image } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { MainStackNavigator, ContactStackNavigator, TestIttackNavigator, UneteStackNavigator } from './StackNavigator';
-import { styles, windowHeight, windowWidth } from '../styles/styles';
+import { styles, windowHeight } from '../styles/styles';
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   let iconName;
   return (
     <Tab.Navigator

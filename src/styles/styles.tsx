@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 import { Dimensions } from 'react-native';
-import SwitchSelector from 'react-native-switch-selector';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;

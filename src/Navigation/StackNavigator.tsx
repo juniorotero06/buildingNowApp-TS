@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next';
 const Stack = createStackNavigator();
 
 function MainStackNavigator() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -38,7 +38,7 @@ function MainStackNavigator() {
 }
 
 const ContactStackNavigator = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -54,7 +54,7 @@ const ContactStackNavigator = () => {
 };
 
 const TestIttackNavigator = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -71,7 +71,7 @@ const TestIttackNavigator = () => {
 };
 
 const UneteStackNavigator = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{

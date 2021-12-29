@@ -8,7 +8,7 @@ const img1 = require('../assets/images/about_background.png');
 const logo = require('../assets/images/logo_letras_negras.png');
 
 const AboutScreen = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <ScrollView>
       <ImageBackground
