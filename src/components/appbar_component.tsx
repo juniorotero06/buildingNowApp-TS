@@ -1,22 +1,25 @@
 import React from 'react';
-import { TouchableOpacity, View, Image, Text } from 'react-native';
-import { styles } from '../styles/styles';
+import { TouchableOpacity, View, Image, Text, StatusBar } from 'react-native';
+import { styles, colors } from '../styles/styles';
 
-const AppbarComponent = ({ navigation, options }) => {
+const AppBarComponent = ({ navigation, options }) => {
   const title =
     options.headerTitle !== undefined ? options.headerTitle : options.title !== undefined ? options.title : null;
   return (
-    <View style={styles.appbarContentContainer}>
-      <TouchableOpacity onPress={navigation.goBack}>
-        <Image source={require('../assets/icons/back.png')} style={styles.backIcon} />
-      </TouchableOpacity>
-      <View style={{ alignItems: 'center' }}>
-        <Text style={styles.appbarTitle}>{title}</Text>
-        <View style={{ width: 50, height: 3, backgroundColor: '#F2A01F' }} />
+    <>
+      <StatusBar animated={true} backgroundColor={colors.persianBlue} />
+      <View style={styles.appBarContentContainer}>
+        <TouchableOpacity onPress={navigation.goBack} style={styles.appBarBackButton}>
+          <Image source={require('../assets/icons/back.png')} style={styles.backIcon} />
+        </TouchableOpacity>
+        <View style={{ alignItems: 'center' }}>
+          <Text style={styles.appBarTitle}>{title}</Text>
+          <View style={styles.appBarTitleLine} />
+        </View>
+        <View />
       </View>
-      <View />
-    </View>
+    </>
   );
 };
 
-export default AppbarComponent;
+export default AppBarComponent;
