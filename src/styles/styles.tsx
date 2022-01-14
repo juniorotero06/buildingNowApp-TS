@@ -189,8 +189,10 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   switchSelector: {
-    width: '35%',
+    width: '20%',
     justifyContent: 'center',
+    marginBottom: windowHeight * 0.01,
+    marginTop: windowHeight * 0.01,
   },
   tabBar: {
     backgroundColor: colors.persianBlue,

@@ -10,12 +10,22 @@ import { useTranslation } from 'react-i18next';
 const logo = require('../assets/images/logo_letras_negras.png');
 
 const options = [
-  { label: 'Español', value: 'es' },
-  { label: 'English', value: 'en' },
+  { label: 'ES', value: 'es' },
+  { label: 'EN', value: 'en' },
 ];
 
 const HomeScreen = ({ navigation }) => {
   const { i18n } = useTranslation();
+
+  function selectLanguage() {
+    if (i18n.language == 'es') {
+      return 0;
+    } else if (i18n.language == 'en') {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
 
   return (
     <ScrollView style={{ backgroundColor: 'white' }}>
@@ -25,7 +35,7 @@ const HomeScreen = ({ navigation }) => {
         <SwitchSelector
           options={options}
           hasPadding
-          initial={0}
+          initial={selectLanguage()}
           buttonColor={'#F2A01F'}
           style={styles.switchSelector}
           onPress={(language: any) => {
