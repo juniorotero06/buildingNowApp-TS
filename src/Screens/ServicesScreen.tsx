@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 const deviceWidth = Dimensions.get('window').width;
 
 const ServicesScreen = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const items = [
     {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { CardStyleInterpolators } from '@react-navigation/stack';
-import AppbarComponent from '../components/appbar_component';
+import AppBarComponent from '../components/appbar_component';
 import HomeScreen from '../Screens/homeScreen';
 import AboutScreen from '../Screens/aboutPage';
 import ApoyoScreen from '../Screens/apoyoInstitucionaScreen';
@@ -11,18 +11,17 @@ import HowFunctionScreen from '../Screens/howFunction';
 import TestItScreen from '../Screens/testItScreen';
 import UneteScreen from '../Screens/uneteScreen';
 import { WebViewLogin, WebViewCustomer, WebViewProvider } from '../components/webViewComponente';
-
 import { useTranslation } from 'react-i18next';
 
 const Stack = createStackNavigator();
 
 function MainStackNavigator() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
         header: ({ navigation, route, options, back }) => (
-          <AppbarComponent route={route} options={options} back={back} navigation={navigation} />
+          <AppBarComponent route={route} options={options} back={back} navigation={navigation} />
         ),
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}
@@ -38,12 +37,12 @@ function MainStackNavigator() {
 }
 
 const ContactStackNavigator = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
         header: ({ navigation, route, options, back }) => (
-          <AppbarComponent route={route} options={options} back={back} navigation={navigation} />
+          <AppBarComponent route={route} options={options} back={back} navigation={navigation} />
         ),
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}
@@ -54,12 +53,12 @@ const ContactStackNavigator = () => {
 };
 
 const TestIttackNavigator = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
         header: ({ navigation, route, options, back }) => (
-          <AppbarComponent route={route} options={options} back={back} navigation={navigation} />
+          <AppBarComponent route={route} options={options} back={back} navigation={navigation} />
         ),
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}
@@ -71,12 +70,12 @@ const TestIttackNavigator = () => {
 };
 
 const UneteStackNavigator = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Stack.Navigator
       screenOptions={{
         header: ({ navigation, route, options, back }) => (
-          <AppbarComponent route={route} options={options} back={back} navigation={navigation} />
+          <AppBarComponent route={route} options={options} back={back} navigation={navigation} />
         ),
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}

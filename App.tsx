@@ -4,6 +4,7 @@ import { DefaultTheme, configureFonts } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigator from './src/Navigation/tabNavegator';
 import SplashScreen from 'react-native-splash-screen';
+import './languages/i18n';
 
 export type AppRootParamList = {
   login: undefined;

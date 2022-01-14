@@ -1,9 +1,14 @@
-import { StyleSheet } from 'react-native';
-import { Dimensions } from 'react-native';
-import SwitchSelector from 'react-native-switch-selector';
+import { StyleSheet, Dimensions, StatusBar } from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+
+const colors = {
+  nero: '#262626',
+  persianBlue: '#2F2FBC',
+  white: '#FFFFFF',
+  orange: '#FFAA00',
+};
 
 const styles = StyleSheet.create({
   //Home Screen Styles
@@ -70,29 +75,37 @@ const styles = StyleSheet.create({
     width: 26,
     height: 26,
   },
-  appbarContentContainer: {
-    flexDirection: 'row',
-    paddingTop: windowHeight * 0.06,
-    paddingBottom: windowHeight * 0.009,
-    paddingHorizontal: windowWidth * 0.02,
+  appBarContentContainer: {
     alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: StatusBar.currentHeight,
+    paddingVertical: windowHeight * 0.02,
+    textAlign: 'center',
   },
-  appbarTitle: {
-    color: 'black',
+  appBarBackButton: {
+    left: windowWidth * 0.075,
+    position: 'absolute',
+    zIndex: 2,
+  },
+  appBarTitle: {
+    color: colors.nero,
+    fontFamily: 'Quicksand-Bold',
     fontSize: windowWidth * 0.07,
-    fontWeight: 'normal',
+    paddingBottom: 5,
+  },
+  appBarTitleLine: {
+    width: 50,
+    height: 3,
+    backgroundColor: colors.orange,
+    borderRadius: 20,
   },
   //tabNavigator
   libraryIcon: {
     width: windowWidth * 0.09,
     height: windowHeight * 0.05,
     resizeMode: 'center',
-  },
-  tabBarLabelStyle: {
-    fontSize: windowWidth * 0.03,
-    paddingTop: windowHeight * 0.01,
   },
   //howFunction Styles
   imgHf: {
@@ -179,6 +192,19 @@ const styles = StyleSheet.create({
     width: '35%',
     justifyContent: 'center',
   },
+  tabBar: {
+    backgroundColor: colors.persianBlue,
+    height: windowHeight * 0.1,
+    borderTopWidth: 0,
+    shadowColor: 'transparent',
+  },
+  tabBarItem: {
+    marginVertical: 10,
+  },
+  tabBarLabel: {
+    fontFamily: 'Quicksand-Medium',
+    fontSize: windowWidth * 0.03,
+  },
 });
 
-export { styles, windowHeight, windowWidth };
+export { styles, windowHeight, windowWidth, colors };

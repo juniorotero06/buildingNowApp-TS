@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { styles, windowHeight, windowWidth } from '../styles/styles';
-import { ImageBackground, TextInput, Text, Image, TouchableOpacity, Alert } from 'react-native';
+import { ImageBackground, TextInput, Text, Image, TouchableOpacity } from 'react-native';
 
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 const background = 'https://buildingnow.co/assets-building-app/images/background_grey.png';
 
-import { useForm, useFormState } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -133,12 +133,12 @@ const ContactScreen = () => {
           <Image
             source={{ uri: 'https://buildingnow.co/assets-building-app/images/bnEnviar.png' }}
             style={styles.buttonImg}
-          ></Image>
+          />
         ) : (
           <Image
             source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_send.png' }}
             style={styles.buttonImg}
-          ></Image>
+          />
         )}
       </TouchableOpacity>
 

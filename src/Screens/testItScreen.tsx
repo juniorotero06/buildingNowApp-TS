@@ -1,5 +1,5 @@
 import React from 'react';
-import { styles, windowHeight, windowWidth } from '../styles/styles';
+import { styles, windowHeight } from '../styles/styles';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useTranslation } from 'react-i18next';

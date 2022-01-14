@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 
 import { View, Image, ScrollView, TouchableOpacity } from 'react-native';
@@ -16,7 +15,7 @@ const options = [
 ];
 
 const HomeScreen = ({ navigation }) => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
     <ScrollView style={{ backgroundColor: 'white' }}>
