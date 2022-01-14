@@ -23,6 +23,17 @@ const HomeScreen = ({ navigation }) => {
       <View style={{ ...styles.container, justifyContent: 'flex-start' }}>
         <Header containerStyle={styles.header} centerComponent={<Image style={styles.logo} source={logo} />} />
 
+        <SwitchSelector
+          options={options}
+          hasPadding
+          initial={0}
+          buttonColor={'#F2A01F'}
+          style={styles.switchSelector}
+          onPress={(language: any) => {
+            i18n.changeLanguage(language);
+          }}
+        />
+
         <TouchableOpacity onPress={() => navigation.navigate('About')}>
           {i18n.language === 'es' ? (
             <Image
@@ -62,16 +73,6 @@ const HomeScreen = ({ navigation }) => {
             />
           )}
         </TouchableOpacity>
-        <SwitchSelector
-          options={options}
-          hasPadding
-          initial={0}
-          buttonColor={'#F2A01F'}
-          style={styles.switchSelector}
-          onPress={(language: any) => {
-            i18n.changeLanguage(language);
-          }}
-        />
       </View>
     </ScrollView>
   );

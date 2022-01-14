@@ -177,8 +177,7 @@ const styles = StyleSheet.create({
   },
   switchSelector: {
     width: '35%',
-    top: windowHeight * 0.1,
-    marginLeft: windowWidth * 0.6,
+    justifyContent: 'center',
   },
 });
 
