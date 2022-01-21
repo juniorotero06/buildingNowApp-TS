@@ -45,7 +45,7 @@ const TestItScreen = ({ navigation }) => {
           <Image
             style={{
               ...styles.buttonImg,
-              width: windowWidth * 2,
+              width: windowWidth * 0.7,
               height: windowHeight * 0.3,
               bottom: windowHeight * 0.08,
             }}
@@ -55,7 +55,7 @@ const TestItScreen = ({ navigation }) => {
           <Image
             style={{
               ...styles.buttonImg,
-              width: windowWidth * 2,
+              width: windowWidth * 0.7,
               height: windowHeight * 0.3,
               bottom: windowHeight * 0.08,
             }}

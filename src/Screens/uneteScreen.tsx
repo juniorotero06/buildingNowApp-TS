@@ -46,7 +46,7 @@ const UneteScreen = ({ navigation }) => {
           <Image
             style={{
               ...styles.buttonImg,
-              width: windowWidth * 2,
+              width: windowWidth * 0.7,
               height: windowHeight * 0.3,
               bottom: windowHeight * 0.07,
             }}
@@ -56,7 +56,7 @@ const UneteScreen = ({ navigation }) => {
           <Image
             style={{
               ...styles.buttonImg,
-              width: windowWidth * 2,
+              width: windowWidth * 0.7,
               height: windowHeight * 0.3,
               bottom: windowHeight * 0.07,
             }}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Image } from 'react-native';
 import { MainStackNavigator, ContactStackNavigator, TestIttackNavigator, UneteStackNavigator } from './StackNavigator';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { styles } from '../styles/styles';
+import { styles, windowHeight, windowWidth } from '../styles/styles';
 import { useTranslation } from 'react-i18next';
 
 const Tab = createBottomTabNavigator();
@@ -47,7 +47,12 @@ const BottomTabNavigator = () => {
             iconName = focused
               ? 'https://buildingnow.co/assets-building-app/icons/iconButtonNavBar/PruebaloYa/pruebalo_activo.png'
               : 'https://buildingnow.co/assets-building-app/icons/iconButtonNavBar/PruebaloYa/pruebalo.png';
-            return <Image source={{ uri: iconName }} style={styles.libraryIcon} />;
+            return (
+              <Image
+                source={{ uri: iconName }}
+                style={{ ...styles.libraryIcon, width: windowWidth * 0.08, height: windowHeight * 0.04 }}
+              />
+            );
           },
         }}
       />
