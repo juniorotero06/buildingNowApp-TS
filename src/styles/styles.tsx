@@ -116,12 +116,14 @@ const styles = StyleSheet.create({
   },
   textPaso: {
     flexDirection: 'row',
+    fontFamily: 'Quicksand-Regular',
     fontSize: windowWidth * 0.04,
     color: 'black',
     marginBottom: windowHeight * 0.06,
     marginLeft: windowWidth * 0.25,
   },
   textSubtitle: {
+    fontFamily: 'Quicksand-Regular',
     flexDirection: 'row',
     fontSize: windowWidth * 0.08,
     color: '#F2A01F',
@@ -141,6 +143,15 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     flexWrap: 'wrap',
     padding: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 6.68,
+
+    elevation: 11,
   },
   //Input styles
   containerForm: {
@@ -153,8 +164,9 @@ const styles = StyleSheet.create({
     width: '80%',
     height: windowHeight * 0.04,
     margin: 6,
+    fontFamily: 'Quicksand-Regular',
     borderWidth: 1,
-    padding: 3,
+    padding: 8,
     backgroundColor: 'white',
     borderColor: '#2F2FBC',
     borderRadius: 5,
@@ -163,6 +175,7 @@ const styles = StyleSheet.create({
   textContact: {
     fontSize: windowWidth * 0.03,
     color: '#2F2FBC',
+    fontFamily: 'Quicksand-Regular',
     marginBottom: windowHeight * 0.03,
     textAlign: 'center',
     width: '70%',
@@ -184,13 +197,16 @@ const styles = StyleSheet.create({
   },
   cardButtonText: {
     color: 'white',
+    fontFamily: 'Quicksand-Regular',
     fontSize: windowWidth * 0.05,
     textAlign: 'center',
+    bottom: windowHeight * 0.005,
     width: '100%',
   },
   switchSelector: {
     width: '20%',
     justifyContent: 'center',
+    fontFamily: 'Quicksand-Regular',
     marginBottom: windowHeight * 0.01,
     marginTop: windowHeight * 0.01,
   },

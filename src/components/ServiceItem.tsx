@@ -60,13 +60,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: deviceWidth * 0.8,
     height: deviceHeight * 0.3,
-    top: -(deviceWidth * 0.35),
+    top: -(deviceWidth * 0.25),
     position: 'absolute',
   },
   cardBody: {
     width: '75%',
     textAlign: 'center',
-    marginTop: deviceHeight * 0.03,
+    marginTop: deviceHeight * 0.15,
   },
   cardTitle: {
     color: colors.orange,
@@ -90,6 +90,15 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     flexWrap: 'wrap',
     padding: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 6.68,
+
+    elevation: 11,
   },
   cardButton: {
     width: '80%',
@@ -100,6 +109,8 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontSize: deviceWidth * 0.05,
     textAlign: 'center',
+    alignItems: 'center',
+    bottom: deviceHeight * 0.005,
     width: '100%',
   },
 });

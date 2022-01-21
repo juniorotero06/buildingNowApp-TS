@@ -41,19 +41,28 @@ const UneteScreen = ({ navigation }) => {
         }}
       />
 
-      <TouchableOpacity
-        style={{ ...styles.cardButton, bottom: windowHeight * 0.12, width: '70%' }}
-        onPress={() => navigation.navigate('provider')}
-      >
-        <LinearGradient
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 0 }}
-          locations={[0.1, 1]}
-          colors={['#FFAA00', '#FF7600']}
-          style={styles.cardButtonGradient}
-        >
-          <Text style={[styles.cardButtonText, styles.fwSemiBold]}>{t('btnUnete')}</Text>
-        </LinearGradient>
+      <TouchableOpacity onPress={() => navigation.navigate('provider')}>
+        {i18n.language === 'es' ? (
+          <Image
+            style={{
+              ...styles.buttonImg,
+              width: windowWidth * 2,
+              height: windowHeight * 0.3,
+              bottom: windowHeight * 0.07,
+            }}
+            source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_unete.png' }}
+          />
+        ) : (
+          <Image
+            style={{
+              ...styles.buttonImg,
+              width: windowWidth * 2,
+              height: windowHeight * 0.3,
+              bottom: windowHeight * 0.07,
+            }}
+            source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_unete_en.png' }}
+          />
+        )}
       </TouchableOpacity>
     </View>
   );

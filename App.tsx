@@ -1,6 +1,5 @@
 import React from 'react';
-import { Provider as PapperProvider } from 'react-native-paper';
-import { DefaultTheme, configureFonts } from 'react-native-paper';
+import { DefaultTheme, configureFonts, Provider as PaperProvider } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigator from './src/Navigation/tabNavegator';
 import SplashScreen from 'react-native-splash-screen';
@@ -19,7 +18,7 @@ declare global {
 }
 
 const fontConfig: any = {
-  default: {
+  android: {
     regular: {
       fontFamily: 'Quicksand-Regular',
       fontWeight: 'normal',
@@ -53,11 +52,11 @@ const App = () => {
     SplashScreen.hide();
   }, []);
   return (
-    <PapperProvider theme={theme}>
+    <PaperProvider theme={theme}>
       <NavigationContainer>
         <BottomTabNavigator />
       </NavigationContainer>
-    </PapperProvider>
+    </PaperProvider>
   );
 };
 

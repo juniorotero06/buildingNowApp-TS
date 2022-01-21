@@ -1,5 +1,5 @@
 import React from 'react';
-import { styles, windowHeight } from '../styles/styles';
+import { styles, windowWidth, windowHeight } from '../styles/styles';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useTranslation } from 'react-i18next';
@@ -40,19 +40,28 @@ const TestItScreen = ({ navigation }) => {
           marginTop: windowHeight * 0.03,
         }}
       />
-      <TouchableOpacity
-        style={{ ...styles.cardButton, bottom: windowHeight * 0.12, width: '70%' }}
-        onPress={() => navigation.navigate('customer')}
-      >
-        <LinearGradient
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 0 }}
-          locations={[0.1, 1]}
-          colors={['#2F2FBC', '#9310ea']}
-          style={styles.cardButtonGradient}
-        >
-          <Text style={[styles.cardButtonText, styles.fwSemiBold]}>{t('btnTextit')}</Text>
-        </LinearGradient>
+      <TouchableOpacity onPress={() => navigation.navigate('customer')}>
+        {i18n.language === 'es' ? (
+          <Image
+            style={{
+              ...styles.buttonImg,
+              width: windowWidth * 2,
+              height: windowHeight * 0.3,
+              bottom: windowHeight * 0.08,
+            }}
+            source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_textit.png' }}
+          />
+        ) : (
+          <Image
+            style={{
+              ...styles.buttonImg,
+              width: windowWidth * 2,
+              height: windowHeight * 0.3,
+              bottom: windowHeight * 0.08,
+            }}
+            source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_textit_en.png' }}
+          />
+        )}
       </TouchableOpacity>
     </View>
   );
