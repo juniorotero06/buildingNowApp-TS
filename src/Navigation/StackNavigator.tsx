@@ -31,7 +31,7 @@ function MainStackNavigator() {
       <Stack.Screen name="services" component={ServicesScreen} options={{ headerTitle: t('Services') }} />
       <Stack.Screen name="apoyo" component={ApoyoScreen} options={{ headerTitle: 'Apoyo Institucional' }} />
       <Stack.Screen name="howf" component={HowFunctionScreen} options={{ headerTitle: t('howf') }} />
-      <Stack.Screen name="login" component={WebViewLogin} />
+      <Stack.Screen name="login" component={WebViewLogin} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
@@ -64,7 +64,7 @@ const TestIttackNavigator = () => {
       }}
     >
       <Stack.Screen name="testit" component={TestItScreen} options={{ headerTitle: t('TryItNow') }} />
-      <Stack.Screen name="customer" component={WebViewCustomer} />
+      <Stack.Screen name="customer" component={WebViewCustomer} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 };
@@ -81,7 +81,7 @@ const UneteStackNavigator = () => {
       }}
     >
       <Stack.Screen name="unete" component={UneteScreen} options={{ headerTitle: t('JoinUp') }} />
-      <Stack.Screen name="provider" component={WebViewProvider} />
+      <Stack.Screen name="provider" component={WebViewProvider} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 };

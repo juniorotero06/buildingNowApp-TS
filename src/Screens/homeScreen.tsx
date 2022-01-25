@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Image, ScrollView, TouchableOpacity, StatusBar } from 'react-native';
 import { Header } from 'react-native-elements';
-import { styles } from '../styles/styles';
+import { styles, colors } from '../styles/styles';
 import SwitchSelector from 'react-native-switch-selector';
 
 import { useTranslation } from 'react-i18next';
@@ -31,6 +31,7 @@ const HomeScreen = ({ navigation }) => {
     <ScrollView style={{ backgroundColor: 'white' }}>
       <View style={{ ...styles.container, justifyContent: 'flex-start' }}>
         <Header containerStyle={styles.header} centerComponent={<Image style={styles.logo} source={logo} />} />
+        <StatusBar animated={true} backgroundColor={colors.white} barStyle="dark-content" />
 
         <SwitchSelector
           options={options}

@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   header: {
     height: '15%',
     backgroundColor: '#fff',
+    borderBottomWidth: 0,
   },
   headerText: {
     fontWeight: 'bold',
@@ -154,12 +155,6 @@ const styles = StyleSheet.create({
     elevation: 11,
   },
   //Input styles
-  containerForm: {
-    flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    marginTop: windowHeight * 0.14,
-  },
   input: {
     width: '80%',
     height: windowHeight * 0.04,
@@ -171,6 +166,7 @@ const styles = StyleSheet.create({
     borderColor: '#2F2FBC',
     borderRadius: 5,
     color: 'black',
+    textAlignVertical: 'top',
   },
   textContact: {
     fontSize: windowWidth * 0.03,
