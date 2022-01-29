@@ -32,6 +32,10 @@ const styles = StyleSheet.create({
     width: '100%',
     resizeMode: 'center',
   },
+  buttonsContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
   backgroundButton: {
     flex: 1,
     width: '100%',
@@ -124,11 +128,10 @@ const styles = StyleSheet.create({
     marginLeft: windowWidth * 0.25,
   },
   textSubtitle: {
-    fontFamily: 'Quicksand-Regular',
-    flexDirection: 'row',
+    fontFamily: 'Quicksand-Bold',
     fontSize: windowWidth * 0.08,
-    color: '#F2A01F',
-    fontWeight: 'bold',
+    lineHeight: 50,
+    textAlign: 'center',
   },
   howFContainer: {
     justifyContent: 'space-around',

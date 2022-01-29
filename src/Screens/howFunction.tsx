@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
-import { styles, windowWidth, windowHeight } from '../styles/styles';
+import { styles, colors, windowWidth, windowHeight } from '../styles/styles';
 
 import { useTranslation } from 'react-i18next';
 
@@ -14,14 +14,14 @@ const HowFunctionScreen = () => {
           style={styles.imgHf}
         />
         <Text style={styles.textPaso}>{t('step_1')}</Text>
-        <Text style={styles.textSubtitle}>{t('register')}</Text>
+        <Text style={{ ...styles.textSubtitle, color: colors.orange }}>{t('register')}</Text>
       </View>
       <View style={styles.howFContainer}>
         <Text style={{ ...styles.textPaso, marginRight: -(windowWidth * 0.1) }}>{t('step_2')}</Text>
         <Text
           style={{
             ...styles.textSubtitle,
-            color: '#2F2FBC',
+            color: colors.persianBlue,
             marginRight: windowWidth * 0.25,
           }}
         >
@@ -54,8 +54,8 @@ const HowFunctionScreen = () => {
         >
           {t('step_3')}
         </Text>
-        <Text style={{ ...styles.textSubtitle, fontSize: windowWidth * 0.07 }}>{t('step_3_Text_1')}</Text>
-        <Text style={{ ...styles.textSubtitle, fontSize: windowWidth * 0.07 }}>{t('step_3_Text_2')}</Text>
+        <Text style={{ ...styles.textSubtitle, color: colors.orange }}>{t('step_3_Text_1')}</Text>
+        <Text style={{ ...styles.textSubtitle, color: colors.orange }}>{t('step_3_Text_2')}</Text>
       </View>
     </View>
   );
