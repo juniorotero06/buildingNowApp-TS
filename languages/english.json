@@ -31,6 +31,8 @@
     "Contact": "Contact",
     "About": "About",
     "Services": "Services",
-    "howf": "How does it work?"
+    "howf": "How does it work?",
+    "alertTitle": "Sent!!",
+    "alertBody": "The email was sent successfully!"
   }
 }

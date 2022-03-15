@@ -1,6 +1,6 @@
 import React from 'react';
 import { styles, windowHeight, windowWidth } from '../styles/styles';
-import { ImageBackground, TextInput, Text, Image, TouchableOpacity } from 'react-native';
+import { ImageBackground, TextInput, Text, Image, TouchableOpacity, Alert } from 'react-native';
 
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
@@ -34,10 +34,16 @@ const ContactScreen = () => {
     },
   });
 
+  const createAlert = () =>
+    Alert.alert(t('alertTitle'), t('alertBody'), [{ text: 'OK', onPress: () => console.log('OK Pressed') }]);
+
   const onSubmit = async () => {
-    await axios.post('https://email-gaira.dinolabs.dev/public/send-email', control._defaultValues).catch(error => {
-      console.error(error);
-    });
+    await axios
+      .post('https://email-gaira.dinolabs.dev/public/send-email', control._defaultValues)
+      .then(() => createAlert())
+      .catch(error => {
+        console.error(error);
+      });
   };
 
   return (

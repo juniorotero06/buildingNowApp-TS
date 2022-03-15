@@ -31,6 +31,8 @@
     "Contact": "Contacto",
     "About": "Nosotros",
     "Services": "Servicios",
-    "howf": "¿Cómo Funciona?"
+    "howf": "¿Cómo Funciona?",
+    "alertTitle": "Enviado!!",
+    "alertBody": "¡El correo ha sido enviado con Exito!"
   }
 }
