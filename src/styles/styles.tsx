@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     margin: 6,
     fontFamily: 'Quicksand-Regular',
     borderWidth: 1,
-    padding: 8,
+    padding: 5,
     backgroundColor: 'white',
     borderColor: '#2F2FBC',
     borderRadius: 5,

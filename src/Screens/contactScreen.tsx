@@ -1,15 +1,13 @@
 import React from 'react';
 import { styles, windowHeight, windowWidth } from '../styles/styles';
-import { ImageBackground, TextInput, Text, Image, TouchableOpacity, Alert } from 'react-native';
-
+import { ImageBackground, TextInput, Text, Image, TouchableOpacity, View } from 'react-native';
+import { Modal, Portal } from 'react-native-paper';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
-const background = 'https://buildingnow.co/assets-building-app/images/background_grey.png';
-
-import { useForm } from 'react-hook-form';
-import { Controller } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+const background = 'https://buildingnow.co/assets-building-app/images/background_grey.png';
 
 const validationSchema = yup.object().shape({
   name: yup.string().required('Nombre requerido'),
@@ -19,10 +17,23 @@ const validationSchema = yup.object().shape({
 });
 
 const ContactScreen = () => {
+  const [visible, setVisible] = React.useState(false);
+  const showModal = () => {
+    setVisible(true);
+    setTimeout(() => setVisible(false), 1500);
+  };
+  const hideModal = () => setVisible(false);
+  const containerStyle = {
+    backgroundColor: '#3C1FF2',
+    padding: 20,
+    height: '15%',
+    width: '100%',
+  };
   const { t, i18n } = useTranslation();
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -34,16 +45,19 @@ const ContactScreen = () => {
     },
   });
 
-  const createAlert = () =>
-    Alert.alert(t('alertTitle'), t('alertBody'), [{ text: 'OK', onPress: () => console.log('OK Pressed') }]);
-
   const onSubmit = async () => {
     await axios
       .post('https://email-gaira.dinolabs.dev/public/send-email', control._defaultValues)
-      .then(() => createAlert())
+      .then(() => showModal())
       .catch(error => {
         console.error(error);
       });
+    reset({
+      name: '',
+      email: '',
+      asunto: '',
+      mensaje: '',
+    });
   };
 
   return (
@@ -134,6 +148,13 @@ const ContactScreen = () => {
         name="mensaje"
       />
       {errors.mensaje && <Text>This is required.</Text>}
+
+      <Portal>
+        <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}>
+          <Text style={{ marginBottom: 15, fontSize: 20, color: 'white' }}>{t('alertTitle')}</Text>
+          <Text style={{ fontSize: 15, color: 'white' }}>{t('alertBody')}</Text>
+        </Modal>
+      </Portal>
       <TouchableOpacity onPress={handleSubmit(onSubmit)}>
         {i18n.language === 'es' ? (
           <Image
