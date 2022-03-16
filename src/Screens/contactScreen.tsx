@@ -1,7 +1,6 @@
 import React from 'react';
 import { styles, windowHeight, windowWidth } from '../styles/styles';
-import { ImageBackground, TextInput, Text, Image, TouchableOpacity, View } from 'react-native';
-import { Modal, Portal } from 'react-native-paper';
+import { ImageBackground, TextInput, Text, Image, TouchableOpacity, Modal, Alert, View, Pressable } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { useForm, Controller } from 'react-hook-form';
@@ -20,15 +19,9 @@ const ContactScreen = () => {
   const [visible, setVisible] = React.useState(false);
   const showModal = () => {
     setVisible(true);
-    setTimeout(() => setVisible(false), 1500);
+    setTimeout(() => setVisible(false), 3000);
   };
   const hideModal = () => setVisible(false);
-  const containerStyle = {
-    backgroundColor: '#3C1FF2',
-    padding: 20,
-    height: '15%',
-    width: '100%',
-  };
   const { t, i18n } = useTranslation();
   const {
     control,
@@ -149,12 +142,26 @@ const ContactScreen = () => {
       />
       {errors.mensaje && <Text>This is required.</Text>}
 
-      <Portal>
-        <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}>
-          <Text style={{ marginBottom: 15, fontSize: 20, color: 'white' }}>{t('alertTitle')}</Text>
-          <Text style={{ fontSize: 15, color: 'white' }}>{t('alertBody')}</Text>
-        </Modal>
-      </Portal>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={visible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+          setVisible(!visible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={{ ...styles.modalText, fontSize: 20 }}>{t('alertTitle')}</Text>
+            <Text style={styles.modalText}>{t('alertBody')}</Text>
+            <Pressable style={[styles.button1, styles.buttonClose]} onPress={() => setVisible(!visible)}>
+              <Text style={styles.textStyle}>Ok!!</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+
       <TouchableOpacity onPress={handleSubmit(onSubmit)}>
         {i18n.language === 'es' ? (
           <Image
