@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
   },
   tabBar: {
     backgroundColor: colors.persianBlue,
-    height: windowHeight * 0.1,
+    height: windowHeight * 0.09,
     borderTopWidth: 0,
     shadowColor: 'transparent',
   },

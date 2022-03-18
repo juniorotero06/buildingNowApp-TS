@@ -54,8 +54,8 @@ const HowFunctionScreen = () => {
         >
           {t('step_3')}
         </Text>
-        <Text style={{ ...styles.textSubtitle, color: colors.orange }}>{t('step_3_Text_1')}</Text>
-        <Text style={{ ...styles.textSubtitle, color: colors.orange }}>{t('step_3_Text_2')}</Text>
+        <Text style={{ ...styles.textSubtitle, color: colors.orange, fontSize: 30 }}>{t('step_3_Text_1')}</Text>
+        <Text style={{ ...styles.textSubtitle, color: colors.orange, fontSize: 30 }}>{t('step_3_Text_2')}</Text>
       </View>
     </View>
   );
