@@ -177,6 +177,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Quicksand-Regular',
     marginBottom: windowHeight * 0.03,
     textAlign: 'center',
+    alignItems: 'center',
     width: '70%',
   },
   buttonImg: {

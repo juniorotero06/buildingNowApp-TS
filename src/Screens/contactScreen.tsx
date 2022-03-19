@@ -4,16 +4,7 @@ import { ImageBackground, TextInput, Text, Image, TouchableOpacity, Modal, Alert
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
 const background = 'https://buildingnow.co/assets-building-app/images/background_grey.png';
-
-const validationSchema = yup.object().shape({
-  name: yup.string().required('Nombre requerido'),
-  email: yup.string().email('Ingresa un E-mail valido').required('E-mail requerido'),
-  asunto: yup.string().required('Nombre requerido'),
-  mensaje: yup.string().required('Nombre requerido'),
-});
 
 const ContactScreen = () => {
   const [visible, setVisible] = React.useState(false);
@@ -34,7 +25,6 @@ const ContactScreen = () => {
       email: '',
       asunto: '',
       mensaje: '',
-      resolver: yupResolver(validationSchema),
     },
   });
 
@@ -87,6 +77,8 @@ const ContactScreen = () => {
         control={control}
         rules={{
           required: true,
+          pattern:
+            /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/,
         }}
         render={({ field: { onChange, onBlur, value } }) => (
           <TextInput
@@ -162,7 +154,7 @@ const ContactScreen = () => {
         </View>
       </Modal>
 
-      <TouchableOpacity onPress={handleSubmit(onSubmit)}>
+      <TouchableOpacity onPress={handleSubmit(onSubmit)} disabled={false}>
         {i18n.language === 'es' ? (
           <Image
             source={{ uri: 'https://buildingnow.co/assets-building-app/images/bnEnviar.png' }}
