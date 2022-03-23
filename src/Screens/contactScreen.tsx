@@ -4,6 +4,7 @@ import { ImageBackground, TextInput, Text, Image, TouchableOpacity, Modal, Alert
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { useForm, Controller } from 'react-hook-form';
+import { ScrollView } from 'react-native-gesture-handler';
 const background = 'https://buildingnow.co/assets-building-app/images/background_grey.png';
 
 const ContactScreen = () => {
@@ -44,168 +45,170 @@ const ContactScreen = () => {
   };
 
   return (
-    <ImageBackground
-      source={{ uri: background }}
-      resizeMode="cover"
-      style={{
-        ...styles.image,
-        backgroundColor: 'white',
-        height: '120%',
-        alignItems: 'center',
-      }}
-    >
-      <Text style={{ ...styles.textContact, marginTop: windowHeight * 0.15 }}>{t('textContact')}</Text>
-      <Controller
-        control={control}
-        rules={{
-          required: true,
-        }}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-            placeholderTextColor="#d3d3d3"
-            placeholder={t('placeHolderName')}
-          />
-        )}
-        name="name"
-      />
-      {errors.name && <Text>This is required.</Text>}
-      <Controller
-        control={control}
-        rules={{
-          required: true,
-          pattern:
-            /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/,
-        }}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-            placeholderTextColor="#d3d3d3"
-            placeholder={t('placeHolderEmail')}
-          />
-        )}
-        name="email"
-      />
-      {errors.email && <Text>This is required.</Text>}
-      <Controller
-        control={control}
-        rules={{
-          required: true,
-        }}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-            placeholderTextColor="#d3d3d3"
-            placeholder={t('placeHolderSubject')}
-          />
-        )}
-        name="asunto"
-      />
-      {errors.asunto && <Text>This is required.</Text>}
-      <Controller
-        control={control}
-        rules={{
-          maxLength: 100,
-        }}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            multiline={true}
-            numberOfLines={4}
-            style={{ ...styles.input, height: '15%' }}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-            placeholderTextColor="#d3d3d3"
-            placeholder={t('placeHolderMsg')}
-            editable
-            maxLength={100}
-          />
-        )}
-        name="mensaje"
-      />
-      {errors.mensaje && <Text>This is required.</Text>}
-
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={visible}
-        onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
-          setVisible(!visible);
+    <ScrollView>
+      <ImageBackground
+        source={{ uri: background }}
+        resizeMode="cover"
+        style={{
+          ...styles.image,
+          backgroundColor: 'white',
+          height: '120%',
+          alignItems: 'center',
         }}
       >
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Text style={{ ...styles.modalText, fontSize: 20 }}>{t('alertTitle')}</Text>
-            <Text style={styles.modalText}>{t('alertBody')}</Text>
-            <Pressable style={[styles.button1, styles.buttonClose]} onPress={() => setVisible(!visible)}>
-              <Text style={styles.textStyle}>Ok!!</Text>
-            </Pressable>
+        <Text style={{ ...styles.textContact, marginTop: windowHeight * 0.15 }}>{t('textContact')}</Text>
+        <Controller
+          control={control}
+          rules={{
+            required: true,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <TextInput
+              style={styles.input}
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              placeholderTextColor="#d3d3d3"
+              placeholder={t('placeHolderName')}
+            />
+          )}
+          name="name"
+        />
+        {errors.name && <Text>This is required.</Text>}
+        <Controller
+          control={control}
+          rules={{
+            required: true,
+            pattern:
+              /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <TextInput
+              style={styles.input}
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              placeholderTextColor="#d3d3d3"
+              placeholder={t('placeHolderEmail')}
+            />
+          )}
+          name="email"
+        />
+        {errors.email && <Text>This is required.</Text>}
+        <Controller
+          control={control}
+          rules={{
+            required: true,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <TextInput
+              style={styles.input}
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              placeholderTextColor="#d3d3d3"
+              placeholder={t('placeHolderSubject')}
+            />
+          )}
+          name="asunto"
+        />
+        {errors.asunto && <Text>This is required.</Text>}
+        <Controller
+          control={control}
+          rules={{
+            maxLength: 100,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <TextInput
+              multiline={true}
+              numberOfLines={4}
+              style={{ ...styles.input, height: '15%' }}
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              placeholderTextColor="#d3d3d3"
+              placeholder={t('placeHolderMsg')}
+              editable
+              maxLength={100}
+            />
+          )}
+          name="mensaje"
+        />
+        {errors.mensaje && <Text>This is required.</Text>}
+
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={visible}
+          onRequestClose={() => {
+            Alert.alert('Modal has been closed.');
+            setVisible(!visible);
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={{ ...styles.modalText, fontSize: 20 }}>{t('alertTitle')}</Text>
+              <Text style={styles.modalText}>{t('alertBody')}</Text>
+              <Pressable style={[styles.button1, styles.buttonClose]} onPress={() => setVisible(!visible)}>
+                <Text style={styles.textStyle}>Ok!!</Text>
+              </Pressable>
+            </View>
           </View>
-        </View>
-      </Modal>
+        </Modal>
 
-      <TouchableOpacity onPress={handleSubmit(onSubmit)} disabled={false}>
-        {i18n.language === 'es' ? (
-          <Image
-            source={{ uri: 'https://buildingnow.co/assets-building-app/images/bnEnviar.png' }}
-            style={styles.buttonImg}
-          />
-        ) : (
-          <Image
-            source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_send.png' }}
-            style={styles.buttonImg}
-          />
-        )}
-      </TouchableOpacity>
+        <TouchableOpacity onPress={handleSubmit(onSubmit)} disabled={false}>
+          {i18n.language === 'es' ? (
+            <Image
+              source={{ uri: 'https://buildingnow.co/assets-building-app/images/bnEnviar.png' }}
+              style={styles.buttonImg}
+            />
+          ) : (
+            <Image
+              source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_send.png' }}
+              style={styles.buttonImg}
+            />
+          )}
+        </TouchableOpacity>
 
-      <Text
-        style={{
-          ...styles.textContact,
-          width: '80%',
-          marginBottom: 0,
-          marginTop: -(windowHeight * 0.1),
-        }}
-      >
-        {t('telText')}{' '}
         <Text
           style={{
-            fontWeight: 'bold',
-            color: '#2F2FBC',
-            fontSize: windowWidth * 0.03,
+            ...styles.textContact,
+            width: '80%',
+            marginBottom: 0,
+            marginTop: -(windowHeight * 0.1),
           }}
         >
-          +573001234567
+          {t('telText')}{' '}
+          <Text
+            style={{
+              fontWeight: 'bold',
+              color: '#2F2FBC',
+              fontSize: windowWidth * 0.03,
+            }}
+          >
+            +573001234567
+          </Text>
         </Text>
-      </Text>
 
-      <Text
-        style={{
-          ...styles.textContact,
-          width: '80%',
-        }}
-      >
-        {t('textEmail')}{' '}
         <Text
           style={{
-            fontWeight: 'bold',
-            color: '#2F2FBC',
-            fontSize: windowWidth * 0.03,
+            ...styles.textContact,
+            width: '80%',
           }}
         >
-          contacto@buildingnow.com
+          {t('textEmail')}{' '}
+          <Text
+            style={{
+              fontWeight: 'bold',
+              color: '#2F2FBC',
+              fontSize: windowWidth * 0.03,
+            }}
+          >
+            contacto@buildingnow.com
+          </Text>
         </Text>
-      </Text>
-    </ImageBackground>
+      </ImageBackground>
+    </ScrollView>
   );
 };
 
