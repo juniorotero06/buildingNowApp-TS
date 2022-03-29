@@ -31,7 +31,7 @@ const ContactScreen = () => {
 
   const onSubmit = async () => {
     await axios
-      .post('https://email-gaira.dinolabs.dev/public/send-email', control._defaultValues)
+      .post('https://email-gaira.dinolabs.dev/public/send-email', control._formValues)
       .then(() => showModal())
       .catch(error => {
         console.error(error);
