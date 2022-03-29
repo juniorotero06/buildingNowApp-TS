@@ -186,6 +186,12 @@ const styles = StyleSheet.create({
     resizeMode: 'center',
     marginTop: -(windowHeight * 0.09),
   },
+  buttonImg2: {
+    width: windowWidth * 0.4,
+    height: windowHeight * 0.1,
+    resizeMode: 'center',
+    marginTop: windowHeight * 0.001,
+  },
   ////////////////
   fwSemiBold: {
     fontFamily: 'Quicksand-SemiBold',

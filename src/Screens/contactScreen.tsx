@@ -52,7 +52,7 @@ const ContactScreen = () => {
         style={{
           ...styles.image,
           backgroundColor: 'white',
-          height: '120%',
+          height: '140%',
           alignItems: 'center',
         }}
       >
@@ -160,12 +160,12 @@ const ContactScreen = () => {
           {i18n.language === 'es' ? (
             <Image
               source={{ uri: 'https://buildingnow.co/assets-building-app/images/bnEnviar.png' }}
-              style={styles.buttonImg}
+              style={styles.buttonImg2}
             />
           ) : (
             <Image
               source={{ uri: 'https://buildingnow.co/assets-building-app/images/btn_send.png' }}
-              style={styles.buttonImg}
+              style={styles.buttonImg2}
             />
           )}
         </TouchableOpacity>
@@ -175,7 +175,7 @@ const ContactScreen = () => {
             ...styles.textContact,
             width: '80%',
             marginBottom: 0,
-            marginTop: -(windowHeight * 0.1),
+            marginTop: windowHeight * 0.001,
           }}
         >
           {t('telText')}{' '}
