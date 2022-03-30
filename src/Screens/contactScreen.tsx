@@ -116,7 +116,7 @@ const ContactScreen = () => {
         <Controller
           control={control}
           rules={{
-            maxLength: 100,
+            maxLength: 400,
           }}
           render={({ field: { onChange, onBlur, value } }) => (
             <TextInput
