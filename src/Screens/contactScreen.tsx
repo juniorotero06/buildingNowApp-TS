@@ -129,7 +129,7 @@ const ContactScreen = () => {
               placeholderTextColor="#d3d3d3"
               placeholder={t('placeHolderMsg')}
               editable
-              maxLength={100}
+              maxLength={400}
             />
           )}
           name="mensaje"
