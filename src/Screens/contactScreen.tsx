@@ -175,29 +175,10 @@ const ContactScreen = () => {
           style={{
             ...styles.textContact,
             width: '80%',
-            marginBottom: 0,
-            marginTop: windowHeight * 0.001,
           }}
         >
-          {t('telText')}{' '}
-          <Text
-            style={{
-              fontWeight: 'bold',
-              color: '#2F2FBC',
-              fontSize: windowWidth * 0.03,
-            }}
-          >
-            +573001234567
-          </Text>
-        </Text>
-
-        <Text
-          style={{
-            ...styles.textContact,
-            width: '80%',
-          }}
-        >
-          {t('textEmail')}{' '}
+          {t('textEmail')}
+          {'\n'}
           <Text
             style={{
               fontWeight: 'bold',
