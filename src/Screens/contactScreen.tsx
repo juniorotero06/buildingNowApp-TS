@@ -186,7 +186,7 @@ const ContactScreen = () => {
               fontSize: windowWidth * 0.03,
             }}
           >
-            contacto@buildingnow.com
+            contacto@buildingnow.co
           </Text>
         </Text>
       </ImageBackground>
